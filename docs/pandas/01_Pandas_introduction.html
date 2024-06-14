@@ -1031,13 +1031,12 @@ Each fare value in GBP is multiplied by the exchange rate to obtain the correspo
 <li><p>Create a new column called ‘Fare_in_DKK’ based on the column ‘Fare’.</p></li>
 <li><p>We assume the old fare prices to be in GBP and the exchange rate to be £1 = 8.7 DKK</p></li>
 </ul>
-<div class="dropdown admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <p>Click to reveal solution</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fare_in_DKK&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">8.7</span>
 </pre></div>
 </div>
-<p>{: .python}</p>
 <p>This solution creates a new column in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> named ‘Fare_in_DKK’, which contains the fare prices converted from GBP to DKK using the given exchange rate.<br/>
 Each fare value in GBP is multiplied by the exchange rate to obtain the corresponding fare value in DKK.</p>
 </div>
