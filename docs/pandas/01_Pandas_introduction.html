@@ -428,7 +428,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-a-series-to-an-existing-dataframe">Appending a <code class="docutils literal notranslate"><span class="pre">Series</span></code> to an existing <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-also-create-a-new-column-based-on-the-data-in-an-existing-column">We can also create a new column based on the data in an existing column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-column-based-on-data-in-an-existing-column">Create a new column based on data in an existing column</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
@@ -771,12 +771,10 @@ The new column names are <code class="docutils literal notranslate"><span class=
 <section id="each-column-in-a-dataframe-is-a-series">
 <h2>Each column in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#each-column-in-a-dataframe-is-a-series" title="Link to this heading">#</a></h2>
 <p><img alt="DataFrame Series" src="../../_images/01_table_series.svg" /></p>
+<p>When we access a column in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, this actually returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object containing all the data in that column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access the &#39;Ages&#39; column from the DataFrame &#39;df&#39;.</span>
-<span class="c1"># This returns a Series object containing all the data in the &#39;Ages&#39; column.</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ages&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ages&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -805,10 +803,11 @@ Name: Ages, dtype: int64
 </div>
 <section id="we-can-also-create-our-own-series">
 <h3>We can also create our own <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#we-can-also-create-our-own-series" title="Link to this heading">#</a></h3>
+<p>We can create and name a <code class="docutils literal notranslate"><span class="pre">Series</span></code> in the following way.<br />
+The <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter assigns the name ‘Fare’ to the Series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a pandas Series named &#39;fare&#39; with specified values.</span>
-<span class="c1"># The &#39;name&#39; parameter assigns the name &#39;Fare&#39; to the Series.</span>
 
 <span class="n">fare</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">7.2500</span><span class="p">,</span> <span class="mf">71.2833</span><span class="p">,</span> <span class="mf">7.9250</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">)</span>
 </pre></div>
@@ -851,11 +850,11 @@ Name: Fare, dtype: float64
 </section>
 <section id="appending-a-series-to-an-existing-dataframe">
 <h2>Appending a <code class="docutils literal notranslate"><span class="pre">Series</span></code> to an existing <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#appending-a-series-to-an-existing-dataframe" title="Link to this heading">#</a></h2>
+<p>We can add a <code class="docutils literal notranslate"><span class="pre">Series</span></code> as a new column to a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, extending it horizontally.<br />
+Here, the name of the ‘fare’ <code class="docutils literal notranslate"><span class="pre">Series</span></code> (‘Fare’) becomes the column name in the updated <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concatenate the &#39;fare&#39; Series to the &#39;df&#39; DataFrame along the columns (axis=1).</span>
-<span class="c1"># This adds the &#39;fare&#39; Series as a new column to &#39;df&#39;, extending it horizontally.</span>
-<span class="c1"># The name of the &#39;fare&#39; Series (&#39;Fare&#39;) becomes the column name in the updated DataFrame.</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">fare</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -921,14 +920,14 @@ Name: Fare, dtype: float64
 </table>
 </div></div></div>
 </div>
-<section id="we-can-also-create-a-new-column-based-on-the-data-in-an-existing-column">
-<h3>We can also create a new column based on the data in an existing column<a class="headerlink" href="#we-can-also-create-a-new-column-based-on-the-data-in-an-existing-column" title="Link to this heading">#</a></h3>
+<section id="create-a-new-column-based-on-data-in-an-existing-column">
+<h3>Create a new column based on data in an existing column<a class="headerlink" href="#create-a-new-column-based-on-data-in-an-existing-column" title="Link to this heading">#</a></h3>
+<p>We can also create a new column based on the data in an existing column.</p>
+<p>Here, we create a new column ‘Age_in_3_years’ in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> ‘df’.<br />
+This column is calculated by adding 3 to each value in the ‘Ages’ column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new column &#39;Age_in_3_years&#39; in the DataFrame &#39;df&#39;.</span>
-<span class="c1"># This column is calculated by adding 3 to each value in the &#39;Ages&#39; column.</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age_in_3_years&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ages&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age_in_3_years&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ages&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span>
 </pre></div>
 </div>
 </div>
@@ -1104,7 +1103,7 @@ Each fare value in GBP is multiplied by the exchange rate to obtain the correspo
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-a-series-to-an-existing-dataframe">Appending a <code class="docutils literal notranslate"><span class="pre">Series</span></code> to an existing <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-also-create-a-new-column-based-on-the-data-in-an-existing-column">We can also create a new column based on the data in an existing column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-column-based-on-data-in-an-existing-column">Create a new column based on data in an existing column</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
