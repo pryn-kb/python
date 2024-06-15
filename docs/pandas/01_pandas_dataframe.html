@@ -977,7 +977,7 @@ This column is calculated by adding 3 to each value in the ‘Ages’ column.</p
 </ul>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fare_in_DKK&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">8.7</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df[&#39;Fare_in_DKK&#39;] = df[&#39;Fare&#39;] * 8.7
 </pre></div>
 </div>
 <p>This solution creates a new column in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> named ‘Fare_in_DKK’, which contains the fare prices converted from GBP to DKK using the given exchange rate.<br/>
