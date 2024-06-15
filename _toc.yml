@@ -11,9 +11,6 @@ parts:
     - file: docs/notebooks
     - file: docs/markdown-notebooks
     - file: docs/mymarkdownfile
-    - file: docs/01_Pandas_introduction
-    - file: docs/testtest
-    - file: docs/03-variables-and-assignment
 
   - caption: Python and Pandas
     chapters:
