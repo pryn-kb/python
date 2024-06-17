@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Creating a DataFrame from a csv file &#8212; My sample book</title>
+    <title>Selecting subsets from a DataFrame &#8212; My sample book</title>
   
   
   
@@ -190,13 +190,9 @@
 <li class="toctree-l1"><a class="reference internal" href="00_pandas_start.html">Getting started with Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_pandas_dataframe.html">Introduction to the Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Pandas_tabular_data.html">How to read and write tabular data</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a csv file</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Selecting subsets from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="04_Pandas_loc_iloc.html">What are <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>?</a></li>
-
-
-
-
 </ul>
 
     </div>
@@ -382,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Creating a DataFrame from a csv file</h1>
+    <h1>Selecting subsets from a DataFrame</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,8 +388,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Creating a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a csv file</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Selecting subsets from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pandas">Import Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataframe-from-a-csv-file">Creating a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a csv file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-specific-columns-from-a-dataframe">Selecting specific columns from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calling-multiple-series">Calling multiple <code class="docutils literal notranslate"><span class="pre">Series</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-specific-rows-from-a-dataframe">Filtering specific rows from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a><ul class="nav section-nav flex-column">
@@ -401,7 +398,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-specific-rows-and-columns-from-a-dataframe">Selecting specific rows and columns from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-square-bracket-indexing">A note on square bracket indexing (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">REMEMBER</a></li>
@@ -417,8 +413,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="creating-a-dataframe-from-a-csv-file">
-<h1>Creating a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a csv file<a class="headerlink" href="#creating-a-dataframe-from-a-csv-file" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="selecting-subsets-from-a-dataframe">
+<h1>Selecting subsets from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#selecting-subsets-from-a-dataframe" title="Link to this heading">#</a></h1>
 <section id="import-pandas">
 <h2>Import Pandas<a class="headerlink" href="#import-pandas" title="Link to this heading">#</a></h2>
 <p>Aliasing pandas as <code class="docutils literal notranslate"><span class="pre">pd</span></code> is a widely adopted convention that simplifies the syntax for accessing its functionalities.<br />
@@ -432,6 +428,9 @@ After this statement, you can use <code class="docutils literal notranslate"><sp
 </div>
 </div>
 </div>
+</section>
+<section id="creating-a-dataframe-from-a-csv-file">
+<h2>Creating a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a csv file<a class="headerlink" href="#creating-a-dataframe-from-a-csv-file" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> function is used to read the data from the file ‘data/titanic.csv’.<br />
 The file is located in the ‘data’ directory, relative to the current working directory.<br />
 The resulting <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> ‘titanic’ contains the dataset, ready for analysis and manipulation.</p>
@@ -1879,17 +1878,18 @@ memory usage: 83.7+ KB
 <p>217 rows × 2 columns</p>
 </div></div></div>
 </div>
-</section>
-<section id="a-note-on-square-bracket-indexing">
-<h2>A note on square bracket indexing (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)<a class="headerlink" href="#a-note-on-square-bracket-indexing" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<h2 class="rubric" id="a-note-on-square-bracket-indexing">A note on square bracket indexing (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)</h2>
 <p>Square bracket indexing (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) is a versatile method for accessing data in Pandas DataFrames, but there are certain tasks that it cannot perform as efficiently or directly compared to <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>. Here are a few limitations of square bracket indexing in comparison to <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>:</p>
 <ol class="arabic simple">
 <li><p><strong>Positional Selection</strong>: When the selection is purely positional (selecting the first five rows, or columns 2 to 4), <code class="docutils literal notranslate"><span class="pre">iloc</span></code> is the most straightforward tool for the job.</p></li>
 <li><p><strong>Inclusive Slicing:</strong> Square bracket slicing excludes the end point, requiring adjustment of slice endpoints. Conversely, <code class="docutils literal notranslate"><span class="pre">loc</span></code> allows for inclusive label-based slicing, simplifying the specification of row and column ranges.</p></li>
 <li><p><strong>Dealing with Non-Integer Labels:</strong> Square brackets may falter with non-integer labels or custom indices due to potential ambiguities, particularly when index labels might be confused with column names. <code class="docutils literal notranslate"><span class="pre">loc</span></code> ensures robust label-based selection, irrespective of label data type.</p></li>
-<li><p><strong>Efficiency in Complex Selections:</strong> For large datasets or intricate selection tasks, <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code> may provide enhanced performance due to their optimizations for label and integer indexing, respectively. They offer a more specialized approach for accessing and manipulating DataFrame data, particularly in complex scenarios.</p></li>
+<li><p><strong>Efficiency in Complex Selections:</strong> For large datasets or intricate selection tasks, <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code> may provide enhanced performance due to their optimizations for label and integer indexing, respectively. They offer a more specialized approach for accessing and manipulating <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> data, particularly in complex scenarios.</p></li>
 </ol>
 <p>We have attached a separate notebook that introduces <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, two properties of pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects that provide methods for indexing.</p>
+</div>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="remember">
@@ -1971,8 +1971,9 @@ memory usage: 83.7+ KB
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Creating a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a csv file</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Selecting subsets from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pandas">Import Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataframe-from-a-csv-file">Creating a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a csv file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-specific-columns-from-a-dataframe">Selecting specific columns from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calling-multiple-series">Calling multiple <code class="docutils literal notranslate"><span class="pre">Series</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-specific-rows-from-a-dataframe">Filtering specific rows from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a><ul class="nav section-nav flex-column">
@@ -1980,7 +1981,6 @@ memory usage: 83.7+ KB
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-specific-rows-and-columns-from-a-dataframe">Selecting specific rows and columns from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-square-bracket-indexing">A note on square bracket indexing (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">REMEMBER</a></li>
