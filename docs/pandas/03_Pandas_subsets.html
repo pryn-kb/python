@@ -1785,12 +1785,11 @@ memory usage: 83.7+ KB
 <section id="selecting-specific-rows-and-columns-from-a-dataframe">
 <h2>Selecting specific rows and columns from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#selecting-specific-rows-and-columns-from-a-dataframe" title="Link to this heading">#</a></h2>
 <p><img alt="Selecting specific rows and columns from a DataFrame" src="../../_images/03_subset_columns_rows.svg" /></p>
+<p>The following code uses boolean indexing to first filter rows where the age is greater than 35, and then selects specific columns ‘Name’ and ‘Pclass’ using double square brackets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter rows in the &#39;titanic&#39; DataFrame where the age is greater than 35,</span>
 <span class="c1"># then select only the &#39;Name&#39; and &#39;Pclass&#39; columns for these filtered rows.</span>
-<span class="c1"># This command uses boolean indexing to first filter rows where the age is greater than 35,</span>
-<span class="c1"># and then selects specific columns &#39;Name&#39; and &#39;Pclass&#39; using double square brackets.</span>
 
 <span class="n">titanic</span><span class="p">[</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">35</span><span class="p">][[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Pclass&#39;</span><span class="p">]]</span>
 </pre></div>
