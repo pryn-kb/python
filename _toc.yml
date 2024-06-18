@@ -12,6 +12,9 @@ parts:
     - file: docs/markdown-notebooks
     - file: docs/mymarkdownfile
 
+  - caption: Python for Absolute Beginners
+    - file: docs/101/01_data_types
+
   - caption: Python and Pandas
     chapters:
     - file: docs/pandas/00_pandas_start
