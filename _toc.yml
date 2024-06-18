@@ -11,6 +11,11 @@ parts:
     - file: docs/notebooks
     - file: docs/markdown-notebooks
     - file: docs/mymarkdownfile
+    - file: docs/admonition_boxes
+
+  - caption: Python for Absolute Beginners
+    chapters:
+    - file: docs/101/01_data_types
 
   - caption: Python and Pandas
     chapters:
