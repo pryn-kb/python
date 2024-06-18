@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting started with Pandas &#8212; My sample book</title>
+    <title>Data Types &#8212; My sample book</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/pandas/00_pandas_start';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/101/01_data_types';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introduction to the Pandas DataFrame" href="01_pandas_dataframe.html" />
-    <link rel="prev" title="Data Types" href="../101/01_data_types.html" />
+    <link rel="next" title="Getting started with Pandas" href="../pandas/00_pandas_start.html" />
+    <link rel="prev" title="Here’s my sample title" href="../mymarkdownfile.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,16 +186,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../mymarkdownfile.html">Here’s my sample title</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Absolute Beginners</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../101/01_data_types.html">Data Types</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Types</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python and Pandas</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting started with Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_pandas_dataframe.html">Introduction to the Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Pandas_tabular_data.html">How to read and write tabular data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_Pandas_subsets.html">Selecting subsets from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_Pandas_loc_iloc.html">What are <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>?</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pandas/00_pandas_start.html">Getting started with Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/01_pandas_dataframe.html">Introduction to the Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/02_Pandas_tabular_data.html">How to read and write tabular data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/03_Pandas_subsets.html">Selecting subsets from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/04_Pandas_loc_iloc.html">What are <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>?</a></li>
 </ul>
 
     </div>
@@ -267,7 +267,7 @@
       
       
       
-      <li><a href="https://github.com/KUBDatalab/python/issues/new?title=Issue%20on%20page%20%2Fdocs/pandas/00_pandas_start.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/KUBDatalab/python/issues/new?title=Issue%20on%20page%20%2Fdocs/101/01_data_types.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +297,7 @@
       
       
       
-      <li><a href="../../_sources/docs/pandas/00_pandas_start.ipynb" target="_blank"
+      <li><a href="../../_sources/docs/101/01_data_types.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +381,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Getting started with Pandas</h1>
+    <h1>Data Types</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,10 +391,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-or-upgrading-pandas-from-pypi">Installing (or upgrading) Pandas from PyPI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulenotfounderror-and-pandas-dependencies"><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code> and Pandas dependencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pandas">Importing Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-data-types">Check Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index">Index</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -406,66 +408,150 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="getting-started-with-pandas">
-<h1>Getting started with Pandas<a class="headerlink" href="#getting-started-with-pandas" title="Link to this heading">#</a></h1>
-<p>Welcome to our Pandas course!</p>
-<p>Before we get started, you may need to install Pandas - depending on how/where you are running Python.
-This guide is intented for people running a local installation of Python and using Jupyter notebooks.</p>
-<p>There are many ways to install Pandas. Ours is just one. <a class="reference external" href="https://pandas.pydata.org/docs/getting_started/install.html">You can read more here.</a></p>
-<section id="attribution">
-<h2>Attribution<a class="headerlink" href="#attribution" title="Link to this heading">#</a></h2>
-<p><img alt="CC Attribution" src="https://mirrors.creativecommons.org/presskit/icons/by.png" /></p>
-<p>Our Pandas teaching material has to a large extend been copied and modified from the official <a class="reference external" href="https://pandas.pydata.org/docs/index.html">Pandas documentation</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-types">
+<h1>Data Types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h1>
+<div class="admonition-learning-objectives admonition">
+<p class="admonition-title">Learning Objectives</p>
+<p>Questions</p>
+<ul class="simple">
+<li><p>What kind of data types exist in Python?</p></li>
+<li><p>What are the key differences between the data types?</p></li>
+</ul>
+<p>Objectives</p>
+<ul class="simple">
+<li><p>Understand the essential data types in Python</p></li>
+<li><p>Explain what a string is, and what you can do with it</p></li>
+<li><p>Explain the differences between integers and floats</p></li>
+<li><p>Explain what a boolean is, and how to use comparisons</p></li>
+</ul>
+</div>
+<p>There are four essential kinds of Python data with different powers and capabilities:</p>
+<ul class="simple">
+<li><p><strong>Strings</strong> (Text)</p></li>
+<li><p><strong>Integers</strong> (Whole Numbers)</p></li>
+<li><p><strong>Floats</strong> (Decimal Numbers)</p></li>
+<li><p><strong>Booleans</strong> (True/False)</p></li>
+</ul>
+<p>Take a look at the two examples below.
+What differences do you notice?</p>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>&#39;Here is a some text&#39;
+</pre></div>
+</div>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+<p>You might be wondering…</p>
+<p>Why is ‘Here is some text’ surrounded by quotation marks while 42 is not?</p>
+<p>Because these are two different “types” of Python data. We will look closer at the different types below.</p>
+<table class="colwidths-auto table" style="border:1px solid black">
+<thead>
+<tr class="row-odd">
+<th class="head"><p>Data Type</p></th>
+<th class="head"><p>Explanation</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even">
+<td><p>String</p></td>
+<td><p>Text</p></td>
+<td><p>'Anything goes 4 strings!'</p></td>
+</tr>
+<tr class="row-odd">
+<td><p>Integer</p></td>
+<td><p>Whole Numbers</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-even">
+<td><p>Float</p></td>
+<td><p>Decimal Numbers</p></td>
+<td><p>3.1415926</p></td>
+</tr>
+<tr class="row-odd">
+<td><p>Boolean</p></td>
+<td><p>True/False</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table><p>Note, that many Python editors and environments (such as Juptyter Lab etc.) will colour the output based on data type. E.g. in Jupyter Lab strings will be in red and integers in green like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Here is a some text&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span>
+</pre></div>
+</div>
+<section id="check-data-types">
+<h2>Check Data Types<a class="headerlink" href="#check-data-types" title="Link to this heading">#</a></h2>
+<p>You can check the data type of any value by using the function <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Here is some text&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output <code class="docutils literal notranslate"><span class="pre">str</span></code> is short for string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output <code class="docutils literal notranslate"><span class="pre">int</span></code> is short for integer.</p>
 </section>
-<section id="installing-or-upgrading-pandas-from-pypi">
-<h2>Installing (or upgrading) Pandas from PyPI<a class="headerlink" href="#installing-or-upgrading-pandas-from-pypi" title="Link to this heading">#</a></h2>
-<p>Pandas can be installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code> from <a class="reference external" href="https://pypi.org/project/pandas">PyPi</a>.</p>
-<p>This command installs the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, Python’s package installer.<br />
-If you haven’t installed Pandas before, this will download and install the latest version of Pandas along with its dependencies.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install pandas
+<section id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
+<p>A <em>string</em> is a Python data type that is treated like text, even if it contains a number. Strings are always enclosed by either single quotation marks <code class="docutils literal notranslate"><span class="pre">'this</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">string'</span></code> or double quotation marks <code class="docutils literal notranslate"><span class="pre">&quot;this</span> <span class="pre">is</span> <span class="pre">also</span> <span class="pre">a</span> <span class="pre">string&quot;</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;this is a string&#39;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> commands are most often run through a shell such as the <strong>Terminal</strong> on macOS or the <strong>Command Prompt</strong> on Windows.<br />
-However, you can run shell commands directly from Jupyter notebooks by adding an exclamation mark <code class="docutils literal notranslate"><span class="pre">!</span></code> in front of the command:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>! pip install pandas
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;this is also a string, even though it contains a number like 42&quot;</span>
 </pre></div>
 </div>
-<p>Adding the <code class="docutils literal notranslate"><span class="pre">--upgrade</span></code> flag not only installs pandas if it isn’t already installed but also ensures that if Pandas is already installed, it is updated to the latest version. This is useful to make sure you have the newest features and bug fixes.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install --upgrade pandas
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">this</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">string</span>
 </pre></div>
 </div>
-<p>Again, we can run this shell command directly in Jupyter notebooks:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>! pip install --upgrade pandas
+<p>It doesn’t matter whether you use single or double quotation marks with strings, as long as you use the same kind on either side of the string.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Quotation marks inside strings
+How can you have quotation marks inside a string?</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Escape characters</p>
+<p>Escape characters and how to tell Python to igonre special meanings. This can be handy if you need to make quotation marks inside a string. This can be done in two ways.</p>
+<p>Use the opposite kind of quotation mark inside the string:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;She exclaimed, &#39;This is a quotation inside a string!&#39;&quot;
 </pre></div>
 </div>
-</section>
-<section id="modulenotfounderror-and-pandas-dependencies">
-<h2><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code> and Pandas dependencies<a class="headerlink" href="#modulenotfounderror-and-pandas-dependencies" title="Link to this heading">#</a></h2>
-<p>When using Pandas, you may encounter the error message <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code>. This is caused by so-called Pandas dependencies.</p>
-<p>When you install the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library for Python, it requires other libraries to function correctly. These required libraries are called dependencies.
-Dependencies are external libraries that provide additional functionality or capabilities that the main library (in this case, Pandas) relies on to operate.</p>
-<p>When you install Pandas using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, Python’s package installer, it automatically installs any required dependencies. However, optional dependencies are not installed by default and must be installed separately if needed.</p>
-<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html#optional-dependencies">You can read more about Pandas dependencies here.</a></p>
-<p>In our case, we will be working with Excel files. All Excel-related dependencies can be installed in one go with this command:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install &quot;pandas[excel]&quot;
+<p>Or “escape” the quotation mark by using a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code> before it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;She exclaimed, \&quot;This is also a quotation inside a string!\&quot;&quot;
 </pre></div>
 </div>
-<p>Or - if run in a Jupyter notebook:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>! pip install &quot;pandas[excel]&quot;
-</pre></div>
+</div>
 </div>
 </section>
-<section id="importing-pandas">
-<h2>Importing Pandas<a class="headerlink" href="#importing-pandas" title="Link to this heading">#</a></h2>
-<p>Even though we have now installed Pandas, we still need to import Pandas when we want to use it in our code.<br />
-This is conventionally done at the top of our script (together with any other imports) to make it easier for future readers (including ourselves!) to see, which packages are used.</p>
-<p>Aliasing <code class="docutils literal notranslate"><span class="pre">pandas</span></code> as <code class="docutils literal notranslate"><span class="pre">pd</span></code> is a widely adopted convention that simplifies the syntax for accessing its functionalities.<br />
-After this statement, you can use <code class="docutils literal notranslate"><span class="pre">pd</span></code> to access all the functionalities provided by the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># This line imports the pandas library and aliases it as &#39;pd&#39;.
-
-import pandas as pd
-</pre></div>
-</div>
+<section id="string-methods">
+<h2>String Methods<a class="headerlink" href="#string-methods" title="Link to this heading">#</a></h2>
+<p>Each data type has different properties and capabilities. So there are special things that only strings can do, and there are special ways of interacting with strings.</p>
+<p>For example, you can <strong>index</strong> and <strong>slice</strong> strings, you can <strong>append</strong> strings together.<br />
+Here are a few examples:</p>
+<section id="index">
+<h3>Index<a class="headerlink" href="#index" title="Link to this heading">#</a></h3>
+<p>Often in programming languages, individual items in an ordered set of data, can be accessed directly using a numeric index or key value. This process is referred to as indexing.</p>
+<p>In Python, strings are ordered sequences of character data, and thus can be indexed in this way. Individual characters in a string can be accessed by specifying the string name followed by a number in square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
+<p>String indexing in Python is zero-based: the first character in the string has index 0, the next has index 1, and so on. The index of the last character will be the length of the string minus one. It can be illustrated like this:</p>
+</section>
 </section>
 </section>
 
@@ -482,7 +568,7 @@ import pandas as pd
         },
         kernelOptions: {
             name: "python3",
-            path: "./docs/pandas"
+            path: "./docs/101"
         },
         predefinedOutput: true
     }
@@ -500,20 +586,20 @@ import pandas as pd
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../101/01_data_types.html"
+       href="../mymarkdownfile.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Types</p>
+        <p class="prev-next-title">Here’s my sample title</p>
       </div>
     </a>
     <a class="right-next"
-       href="01_pandas_dataframe.html"
+       href="../pandas/00_pandas_start.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to the Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+        <p class="prev-next-title">Getting started with Pandas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -533,10 +619,12 @@ import pandas as pd
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-or-upgrading-pandas-from-pypi">Installing (or upgrading) Pandas from PyPI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulenotfounderror-and-pandas-dependencies"><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code> and Pandas dependencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pandas">Importing Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-data-types">Check Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index">Index</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
