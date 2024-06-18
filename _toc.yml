@@ -11,6 +11,7 @@ parts:
     - file: docs/notebooks
     - file: docs/markdown-notebooks
     - file: docs/mymarkdownfile
+    - file: docs/admonition_boxes
 
   - caption: Python for Absolute Beginners
     chapters:
