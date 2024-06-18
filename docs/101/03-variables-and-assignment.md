@@ -95,11 +95,11 @@ We can check to see what’s “inside” variables by running a cell with the v
 ~~~
 first_name
 ~~~
-{: .python}
+
 ~~~
 Ahmed
 ~~~
-{: .output}
+
 
 You can run the `print()` function inside the Jupyter environment, too. This is sometimes useful because Jupyter will only display the last variable in a cell, while `print()` can display multiple variables. Additionally, Jupyter will display text with `\n` characters (which means “new line”), while `print()` will display the text appropriately formatted with new lines.
 
