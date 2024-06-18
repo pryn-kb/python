@@ -16,6 +16,7 @@ parts:
   - caption: Python for Absolute Beginners
     chapters:
     - file: docs/101/01_data_types
+    - file: docs/03-variables-and-assignment
 
   - caption: Python and Pandas
     chapters:
