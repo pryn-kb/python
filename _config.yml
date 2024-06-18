@@ -3,7 +3,7 @@
 
 title: My sample book
 author: <a href="https://kub.kb.dk/datalab" target="_blank">KUB Datalab</a>
-logo: datalab_logo.png
+logo: kub_datalab_logo.jpeg
 copyright: false
 
 # Force re-execution of notebooks on each build.
