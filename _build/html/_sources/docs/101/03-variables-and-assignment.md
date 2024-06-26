@@ -12,6 +12,8 @@ kernelspec:
   name: python3
 ---
 
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
 # Variables and assignment
 
 +++
@@ -229,7 +231,6 @@ print(color[0])
 
 A part of a string is called a substring. A substring can be as short as a single character. A slice is a part of a string (or, more generally, any list-like thing). We take a slice by using `[start:stop]`, where start is replaced with the index of the first element we want and stop is replaced with the index of the element just after the last element we want. Mathematically, you might say that a slice selects `[start:stop]`. The difference between stop and start is the slice’s length. Taking a slice does not change the contents of the original string. Instead, the slice is a copy of part of the original string.
 
-
 ```{code-cell} ipython3
 ---
 editable: true
@@ -269,7 +270,7 @@ Also note that nested functions are evaluated from the inside out, just like in 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 ## Exercises 
-In the following you will find a series of exercises - try to solve them on your own before looking at the solution. 
+In the following you will find a series of exercises - try to solve them on your own before looking at the solution.
 
 +++
 
@@ -401,7 +402,7 @@ If `thing` is a variable name, low is a low number, and high is a high number:
 4. What does thing`[:]` (just a colon) do?
 5. What does thing`[number:negative-number]` do?
 
-+++
++++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 ````{admonition} Solution
 :class: dropdown
@@ -412,7 +413,7 @@ library_name[1:3] is: oc
 2. It will slice the string, starting at the low index and stopping at the end of the string
 3. It will slice the string, starting at the beginning on the string, and ending an element before the high index
 4. It will print the entire string
-5. It will slice the string, starting the number index, and ending a distance of the absolute value of negative-number elements from the end of the string
+5. It will slice the string, starting the number index, and ending a distance of the absolute value of negative-number elements from the end of the string 
 ````
 ---
 
