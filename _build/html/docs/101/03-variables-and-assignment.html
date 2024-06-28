@@ -573,7 +573,7 @@ And wraps around to a new line at the end.</p>
 </div>
 </div>
 </div>
-<p>The last line of an error message is usually the most informative. This message lets us know that there is no variable called eye_color in the script.</p>
+<p>The last line of an error message is usually the most informative. This message lets us know that there is no variable called <code class="docutils literal notranslate"><span class="pre">eye_color</span></code> in the script.</p>
 <div class="warning admonition">
 <p class="admonition-title">Variables Persist Between Cells</p>
 <p>Variables defined in one cell exist in all other cells once executed, so the relative location of cells in the notebook do not matter (i.e., cells lower down can still affect those above).</p>
@@ -720,6 +720,23 @@ y = swap  #  x-&gt;3.0 y-&gt;1.0 swap-&gt;1.0
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initial</span> <span class="o">=</span> <span class="s2">&quot;left&quot;</span>  <span class="c1"># Initial is assigned the string &quot;left&quot;</span>
+<span class="n">position</span> <span class="o">=</span> <span class="n">initial</span>  <span class="c1"># Position is assigned the variable initial, currently &quot;left&quot;</span>
+<span class="n">initial</span> <span class="o">=</span> <span class="s2">&quot;right&quot;</span>  <span class="c1"># Initial is assigned the string &quot;right&quot;</span>
+
+<span class="c1"># The last assignment to position is “left”</span>
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution</p>
