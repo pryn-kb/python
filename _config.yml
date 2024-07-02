@@ -1,3 +1,14 @@
+sphinx:
+  # List of additional Sphinx extensions to enable
+  extra_extensions:
+    - sphinx.ext.todo  # Enables the 'todo' extension to allow the use of 'todo' directives
+
+  # Additional configuration settings for Sphinx
+  config:
+    # Setting to include 'todo' items in the output
+    todo_include_todos: true  # Ensures that 'todo' items are included in the final build
+
+
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
