@@ -19,6 +19,7 @@ parts:
     - file: docs/101/02_variables_and_assignment
     - file: docs/101/03_type_conversion
     - file: docs/101/04_built-in_functions
+    - file: docs/101/05_lists
 
   - caption: Python and Pandas
     chapters:
