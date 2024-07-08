@@ -174,7 +174,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to your Jupyter Book
+                    Welcome to KUB Datalab’s Python teaching material
                 </a>
             </li>
         </ul>
@@ -189,6 +189,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Absolute Beginners</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_setup.html">Running Python</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="01_data_types.html">Data Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_variables_and_assignment.html">Variables and assignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_type_conversion.html">Data Types and Type Conversion</a></li>
@@ -399,9 +401,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-if-statements-to-control-whether-or-not-a-block-of-code-is-executed">Use <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to control whether or not a block of code is executed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements-control-whether-or-not-a-block-of-code-is-executed"><code class="docutils literal notranslate"><span class="pre">if</span></code> statements control whether or not a block of code is executed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals-are-often-used-inside-loops">Conditionals are often used inside loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-else-to-execute-a-block-of-code-when-an-if-condition-is-not-true">Use else to execute a block of code when an if condition is not true</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-else-to-execute-a-block-of-code-when-an-if-condition-is-not-true">Use <code class="docutils literal notranslate"><span class="pre">else</span></code> to execute a block of code when an if condition is not true</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elif-specify-additional-tests"><code class="docutils literal notranslate"><span class="pre">elif</span></code> specify additional tests</a></li>
 </ul>
 </li>
@@ -415,7 +417,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-tracing-execution">Exercise 1: Tracing execution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-trimming-values">Exercise 2: Trimming values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-using-the-input-function">Exercise 3: Using the <code class="docutils literal notranslate"><span class="pre">input</span></code> function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-using-the-input-function">Exercise 3: Using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-the-number-guessing-game">Exercise 4: The number guessing game</a></li>
 </ul>
 </li>
@@ -447,8 +449,8 @@ document.write(`
 </ul>
 </div>
 <hr class="docutils" />
-<section id="use-if-statements-to-control-whether-or-not-a-block-of-code-is-executed">
-<h2>Use <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to control whether or not a block of code is executed<a class="headerlink" href="#use-if-statements-to-control-whether-or-not-a-block-of-code-is-executed" title="Permalink to this heading">#</a></h2>
+<section id="if-statements-control-whether-or-not-a-block-of-code-is-executed">
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> statements control whether or not a block of code is executed<a class="headerlink" href="#if-statements-control-whether-or-not-a-block-of-code-is-executed" title="Permalink to this heading">#</a></h2>
 <p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement (more properly called a conditional statement) controls whether some block of code is executed or not.
 The structure is similar to a <code class="docutils literal notranslate"><span class="pre">for</span></code> statement:</p>
 <ul class="simple">
@@ -507,7 +509,7 @@ But it is useful when we have a collection to process.</p>
 </details>
 </div>
 <section id="use-else-to-execute-a-block-of-code-when-an-if-condition-is-not-true">
-<h3>Use else to execute a block of code when an if condition is not true<a class="headerlink" href="#use-else-to-execute-a-block-of-code-when-an-if-condition-is-not-true" title="Permalink to this heading">#</a></h3>
+<h3>Use <code class="docutils literal notranslate"><span class="pre">else</span></code> to execute a block of code when an if condition is not true<a class="headerlink" href="#use-else-to-execute-a-block-of-code-when-an-if-condition-is-not-true" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">else</span></code> can be used following an <code class="docutils literal notranslate"><span class="pre">if</span></code>statement.
 It allows us to specify an alternative to execute when the <code class="docutils literal notranslate"><span class="pre">if</span></code> branch isn’t taken.</p>
 <div class="cell tag_hide-output docutils container">
@@ -862,7 +864,7 @@ A way to stop the loop could be:</p>
 </section>
 <hr class="docutils" />
 <section id="exercise-3-using-the-input-function">
-<h3>Exercise 3: Using the <code class="docutils literal notranslate"><span class="pre">input</span></code> function<a class="headerlink" href="#exercise-3-using-the-input-function" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 3: Using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function<a class="headerlink" href="#exercise-3-using-the-input-function" title="Permalink to this heading">#</a></h3>
 <p>Try out the code below. You will need to copy paste it into your own notebook.</p>
 <p>What does the script do?
 What does the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> do?</p>
@@ -1049,9 +1051,9 @@ Congratulations! You guessed the correct number in 3 attempts.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-if-statements-to-control-whether-or-not-a-block-of-code-is-executed">Use <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to control whether or not a block of code is executed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements-control-whether-or-not-a-block-of-code-is-executed"><code class="docutils literal notranslate"><span class="pre">if</span></code> statements control whether or not a block of code is executed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals-are-often-used-inside-loops">Conditionals are often used inside loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-else-to-execute-a-block-of-code-when-an-if-condition-is-not-true">Use else to execute a block of code when an if condition is not true</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-else-to-execute-a-block-of-code-when-an-if-condition-is-not-true">Use <code class="docutils literal notranslate"><span class="pre">else</span></code> to execute a block of code when an if condition is not true</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elif-specify-additional-tests"><code class="docutils literal notranslate"><span class="pre">elif</span></code> specify additional tests</a></li>
 </ul>
 </li>
@@ -1065,7 +1067,7 @@ Congratulations! You guessed the correct number in 3 attempts.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-tracing-execution">Exercise 1: Tracing execution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-trimming-values">Exercise 2: Trimming values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-using-the-input-function">Exercise 3: Using the <code class="docutils literal notranslate"><span class="pre">input</span></code> function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-using-the-input-function">Exercise 3: Using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-the-number-guessing-game">Exercise 4: The number guessing game</a></li>
 </ul>
 </li>
