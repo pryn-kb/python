@@ -21,6 +21,7 @@ parts:
     - file: docs/101/04_built-in_functions
     - file: docs/101/05_lists
     - file: docs/101/06_for_loops
+    - file: docs/101/07_conditionals
 
   - caption: Python and Pandas
     chapters:

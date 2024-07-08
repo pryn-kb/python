@@ -11,13 +11,22 @@ parts:
     - file: docs/notebooks
     - file: docs/markdown-notebooks
     - file: docs/mymarkdownfile
-    - file: docs/01_Pandas_introduction
-    - file: docs/testtest
-    - file: docs/03-variables-and-assignment
+    - file: docs/admonition_boxes
+
+  - caption: Python for Absolute Beginners
+    chapters:
+    - file: docs/101/01_data_types
+    - file: docs/101/02_variables_and_assignment
+    - file: docs/101/03_type_conversion
+    - file: docs/101/04_built-in_functions
+    - file: docs/101/05_lists
+    - file: docs/101/06_for_loops
+    - file: docs/101/07_conditionals
 
   - caption: Python and Pandas
     chapters:
-    - file: docs/pandas/01_Pandas_introduction
+    - file: docs/pandas/00_pandas_start
+    - file: docs/pandas/01_pandas_dataframe
     - file: docs/pandas/02_Pandas_tabular_data
     - file: docs/pandas/03_Pandas_subsets
     - file: docs/pandas/04_Pandas_loc_iloc
