@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="For Loops" href="06_for_loops.html" />
-    <link rel="prev" title="Built-in Functions and Help" href="04_built-in_functions.html" />
+    <link rel="prev" title="Built-in Functions and help" href="04_built-in_functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,13 +175,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to your Jupyter Book
+                    Welcome to KUB Datalab’s Python course
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Still testing</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">How to..</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../help_and_documentation.html">Help and documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_setup.html">Install &amp; run python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dictionary.html">Learn all the new words</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help_and_documentation.html">Get help and find documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
@@ -192,18 +194,19 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_data_types.html">Data Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_variables_and_assignment.html">Variables and assignment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_type_conversion.html">Data Types and Type Conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_built-in_functions.html">Built-in Functions and Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_type_conversion.html">Data types and type conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_built-in_functions.html">Built-in Functions and help</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_for_loops.html">For Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_conditionals.html">Conditionals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python and Pandas</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../pandas/00_pandas_start.html">Getting started with Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pandas/01_pandas_dataframe.html">Introduction to the Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pandas/02_Pandas_tabular_data.html">How to read and write tabular data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pandas/03_Pandas_subsets.html">Selecting subsets from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pandas/04_Pandas_loc_iloc.html">What are <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/01_pandas_dataframe.html">Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/02_Pandas_tabular_data.html">Read and write tabular data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/03_Pandas_subsets.html">Subsets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/04_Pandas_loc_iloc.html"><code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code></a></li>
 </ul>
 
     </div>
@@ -399,30 +402,30 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-lists">What are Lists?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-lists">Indexing Lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-lists">Slicing Lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replacing-list-items">Replacing List Items</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-to-lists">Appending to Lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-list-items">Deleting List Items</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-lists">What are lists?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-lists">Indexing lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-lists">Slicing lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replacing-list-items">Replacing list items</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-to-lists">Appending to lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-list-items">Deleting list items</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-lists">Empty Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-lists">Empty lists</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-may-contain-items-of-different-data-types">Lists may contain items of different data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-are-mutable">Lists are mutable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-strings-are-immutable">Character strings are immutable</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-beyond-the-end">Indexing Beyond the End</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-beyond-the-end">Indexing beyond the end</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-fill-in-the-blanks">Exercise 1: Fill in the Blanks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-how-large-is-a-slice">Exercise 2: How Large is a Slice?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-working-with-the-end">Exercise 3: Working With the End</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-stepping-through-a-list">Exercise 4: Stepping Through a List</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-slice-bounds">Exercise 5: Slice Bounds</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-6-sort-and-sorted">Exercises 6: Sort and Sorted</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-copying-or-not">Exercise 7: Copying (or Not)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-from-strings-to-lists-and-back">Exercise 8: From Strings to Lists and Back</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-fill-in-the-blanks">Exercise 1: Fill in the blanks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-how-large-is-a-slice">Exercise 2: How large is a slice?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-working-with-the-end">Exercise 3: Working with the end</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-stepping-through-a-list">Exercise 4: Stepping through a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-slicing">Exercise 5: Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-6-sort-and-sorted">Exercises 6: Sort and sorted</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-copying-or-not">Exercise 7: Copying (or not)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-from-strings-to-lists-and-back">Exercise 8: From strings to lists and back</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keypoints">Keypoints</a></li>
@@ -453,12 +456,12 @@ document.write(`
 </div>
 <hr class="docutils" />
 <section id="what-are-lists">
-<h2>What are Lists?<a class="headerlink" href="#what-are-lists" title="Link to this heading">#</a></h2>
+<h2>What are lists?<a class="headerlink" href="#what-are-lists" title="Link to this heading">#</a></h2>
 <p>A list is a Python data type that stores many items in a single structure.</p>
 <p>Scenario: You have set up an thermometer to do temperature measurements in a storage room for rare books.</p>
+<p>Doing calculations with a hundred variables called <code class="docutils literal notranslate"><span class="pre">temperature_001</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature_002</span></code>, etc.,
+would be at least as slow as doing them by hand.</p>
 <ul class="simple">
-<li><p>Doing calculations with a hundred variables called <code class="docutils literal notranslate"><span class="pre">temperature_001</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature_002</span></code>, etc.,
-would be at least as slow as doing them by hand.</p></li>
 <li><p>Use a <em>list</em> to store many items together.</p>
 <ul>
 <li><p>List items are contained within square brackets <code class="docutils literal notranslate"><span class="pre">[...]</span></code>.</p></li>
@@ -484,7 +487,7 @@ length: 5
 </div>
 </div>
 <section id="indexing-lists">
-<h3>Indexing Lists<a class="headerlink" href="#indexing-lists" title="Link to this heading">#</a></h3>
+<h3>Indexing lists<a class="headerlink" href="#indexing-lists" title="Link to this heading">#</a></h3>
 <p>We can use an item’s index to fetch it from a list.</p>
 <ul class="simple">
 <li><p>Just like with strings, we can use index to find a given item in a list.</p></li>
@@ -506,12 +509,10 @@ fourth item of temperatures: 17.6
 </div>
 </section>
 <section id="slicing-lists">
-<h3>Slicing Lists<a class="headerlink" href="#slicing-lists" title="Link to this heading">#</a></h3>
+<h3>Slicing lists<a class="headerlink" href="#slicing-lists" title="Link to this heading">#</a></h3>
 <p>Just like with strings, we can use indexing syntax to slice lists.</p>
-<ul class="simple">
-<li><p>If <code class="docutils literal notranslate"><span class="pre">l</span></code> is a list, an expression of the form <code class="docutils literal notranslate"><span class="pre">l[start:stop]</span></code> returns the portion of <code class="docutils literal notranslate"><span class="pre">l</span></code> starting with position <code class="docutils literal notranslate"><span class="pre">start</span></code>, and up to <em><strong>but not including</strong></em> position <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</p></li>
-<li><p>Take a look at the example with the list of temperatures:</p></li>
-</ul>
+<p><em>If <code class="docutils literal notranslate"><span class="pre">l</span></code> is a list, an expression of the form <code class="docutils literal notranslate"><span class="pre">l[start:stop]</span></code> returns the portion of <code class="docutils literal notranslate"><span class="pre">l</span></code> starting with position <code class="docutils literal notranslate"><span class="pre">start</span></code>, and up to <em><strong>but not including</strong></em> position <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</em></p>
+<p>Take a look at the example with the list of temperatures:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span>
@@ -528,11 +529,9 @@ fourth item of temperatures: 17.6
 </div>
 </section>
 <section id="replacing-list-items">
-<h3>Replacing List Items<a class="headerlink" href="#replacing-list-items" title="Link to this heading">#</a></h3>
+<h3>Replacing list items<a class="headerlink" href="#replacing-list-items" title="Link to this heading">#</a></h3>
 <p>Lists’ items can be replaced by assigning to them.</p>
-<ul class="simple">
-<li><p>Use an index expression on the left of the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) to replace a value:</p></li>
-</ul>
+<p>You can use an index expression on the left of the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) to replace a value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">16.5</span>
@@ -548,11 +547,9 @@ fourth item of temperatures: 17.6
 </div>
 </section>
 <section id="appending-to-lists">
-<h3>Appending to Lists<a class="headerlink" href="#appending-to-lists" title="Link to this heading">#</a></h3>
+<h3>Appending to lists<a class="headerlink" href="#appending-to-lists" title="Link to this heading">#</a></h3>
 <p>Appending items to a list lengthens it.</p>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">list_name.append</span></code> to add items to the end of a list:</p></li>
-</ul>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">list_name.append</span></code> to add items to the end of a list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;temperatures is initially:&#39;</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">)</span>
@@ -569,15 +566,9 @@ temperatures has become: [16.5, 17.5, 17.7, 17.5, 17.6, 17.9, 18.2]
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.append()</span></code> is a <em>method</em> of lists.</p>
-<ul>
-<li><p>A method is similar to a function, but tied to a particular object.</p></li>
-</ul>
-</li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">object_name.method_name</span></code> to call methods.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">help(list)</span></code> for a preview.</p></li>
-</ul>
+<p><code class="docutils literal notranslate"><span class="pre">.append()</span></code> is a <em>method</em> of lists.
+*   A method is similar to a function, but tied to a particular object.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">object_name.method_name</span></code> to call methods and <code class="docutils literal notranslate"><span class="pre">help(list)</span></code> for a preview.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Table of List Methods</p>
 <p>For more in-depth information, see the <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">Python Documentation</a>.</p>
@@ -633,7 +624,7 @@ temperatures has become: [16.5, 17.5, 17.7, 17.5, 17.6, 17.9, 18.2]
 </div>
 </section>
 <section id="deleting-list-items">
-<h3>Deleting List Items<a class="headerlink" href="#deleting-list-items" title="Link to this heading">#</a></h3>
+<h3>Deleting list items<a class="headerlink" href="#deleting-list-items" title="Link to this heading">#</a></h3>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">del</span></code> to remove items from a list entirely.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">list_name[index]</span></code> removes an item from a list and shortens the list.</p></li>
@@ -664,16 +655,13 @@ numbers after removing last item: [2, 3, 5, 7]
 </section>
 <hr class="docutils" />
 <section id="empty-lists">
-<h2>Empty Lists<a class="headerlink" href="#empty-lists" title="Link to this heading">#</a></h2>
+<h2>Empty lists<a class="headerlink" href="#empty-lists" title="Link to this heading">#</a></h2>
 <p>The empty list contains no items.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">[]</span></code> on its own to represent a list that doesn’t contain any items.</p>
 <ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">[]</span></code> on its own to represent a list that doesn’t contain any items.</p>
-<ul>
 <li><p>“The zero of lists.”</p></li>
 </ul>
-</li>
-<li><p>Helpful as a starting point for collecting values (which we will see in the next episode about <a class="reference internal" href="06_for_loops.html"><span class="doc std std-doc">For Loops</span></a>.</p></li>
-</ul>
+<p>This is helpful as a starting point for collecting values (which we will see in the next episode about <a class="reference internal" href="06_for_loops.html"><span class="doc std std-doc">For Loops</span></a>.</p>
 </section>
 <hr class="docutils" />
 <section id="lists-may-contain-items-of-different-data-types">
@@ -702,115 +690,107 @@ numbers after removing last item: [2, 3, 5, 7]
 <p>Remember that you can get single characters from a character string using indexes in square brackets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element</span> <span class="o">=</span> <span class="s1">&#39;carbon&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zeroth character:&#39;</span><span class="p">,</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;third character:&#39;</span><span class="p">,</span> <span class="n">element</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_titel</span> <span class="o">=</span> <span class="s1">&#39;To Kill a Mockingbird&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zeroth character:&#39;</span><span class="p">,</span> <span class="n">book_titel</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;third character:&#39;</span><span class="p">,</span> <span class="n">book_titel</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zeroth character: c
-third character: b
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zeroth character: T
+third character: i
 </pre></div>
 </div>
 </div>
 </div>
 <p>Lists and character strings are both <em>collections</em>.</p>
 <p><strong>But!</strong></p>
+<p>You cannot alter the characters in a string after it has been created.</p>
 <ul class="simple">
-<li><p>You cannot alter the characters in a string after it has been created.</p>
-<ul>
 <li><p><em>Immutable</em>: cannot be changed after creation. E.g., strings.</p></li>
 <li><p>In contrast, lists are <em>mutable</em>: they can be modified in place.</p></li>
 </ul>
-</li>
-<li><p>Python considers the string to be a single value with parts,
-not a collection of values.</p></li>
-</ul>
+<p>Python considers the string to be a single value with parts, not a collection of values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_titel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;N&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">book_titel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;N&#39;</span>
 
 <span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
 </pre></div>
 </div>
 </div>
 </div>
-<div class="note admonition">
+<div class="important admonition">
 <p class="admonition-title">Notice the difference between overwriting and changing values</p>
 <p>In Python, when you use the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) with a variable (<em>and not a variable index!</em>), it doesn’t change the original value of the variable.</p>
 <p>Instead, it replaces the current value of the variable with the new value on the right-hand side of the assignment.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element</span> <span class="o">=</span> <span class="s1">&#39;carbon&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-<span class="n">element</span> <span class="o">=</span> <span class="s1">&#39;helium&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_titel</span> <span class="o">=</span> <span class="s1">&#39;To Kill a Mockingbird&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book_titel</span><span class="p">)</span>
+<span class="n">book_titel</span> <span class="o">=</span> <span class="s1">&#39;1984&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book_titel</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>carbon
-helium
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>To Kill a Mockingbird
+1984
 </pre></div>
 </div>
 </div>
 </div>
-<p>In the code above, the variable <code class="docutils literal notranslate"><span class="pre">element</span></code> initially holds the value ‘carbon’, but when the second line is executed, it is overwritten with the new value ‘helium’.</p>
-<p>The old value ‘carbon’ is effectively discarded, and <code class="docutils literal notranslate"><span class="pre">element</span></code> now contains ‘helium’.</p>
+<p>In the code above, the variable <code class="docutils literal notranslate"><span class="pre">book_titel</span></code> initially holds the value ‘To Kill a Mockingbird’, but when the second line is executed, it is overwritten with the new value ‘1984’.</p>
+<p>The old value ‘To Kill a Mockingbird’ is effectively discarded, and <code class="docutils literal notranslate"><span class="pre">book_titel</span></code> now contains ‘1984’.</p>
 <p>In contrast, when assigning to a list index:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;carbon&#39;</span><span class="p">,</span> <span class="s1">&#39;helium&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
-<span class="n">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;hydrogen&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;To Kill a Mockingbird&#39;</span><span class="p">,</span> <span class="s1">&#39;1984&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
+<span class="n">book_titles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Romeo and Juliet&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;carbon&#39;, &#39;helium&#39;]
-[&#39;hydrogen&#39;, &#39;helium&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;To Kill a Mockingbird&#39;, &#39;1984&#39;]
+[&#39;Romeo and Juliet&#39;, &#39;1984&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>We don’t overwrite the variable <code class="docutils literal notranslate"><span class="pre">elements</span></code> but rather we <em>change</em> the content of the zeroth index.</p>
+<p>We don’t overwrite the variable <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> but rather we <em>change</em> the content of the zeroth index.</p>
 <p>Thus, the difference between <em>immutable</em> and <em>mutable</em> data types.</p>
 </section>
 </section>
 <section id="indexing-beyond-the-end">
-<h2>Indexing Beyond the End<a class="headerlink" href="#indexing-beyond-the-end" title="Link to this heading">#</a></h2>
-<p>Indexing beyond the end of the collection is an error.</p>
+<h2>Indexing beyond the end<a class="headerlink" href="#indexing-beyond-the-end" title="Link to this heading">#</a></h2>
+<p>Indexing beyond the end of the collection is an error. Therefore, python reports an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> if we attempt to access a value that doesn’t exist.</p>
 <ul class="simple">
-<li><p>Python reports an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> if we attempt to access a value that doesn’t exist.</p>
-<ul>
 <li><p>This is a kind of <a class="reference internal" href="04_built-in_functions.html"><span class="doc std std-doc">runtime error</span></a>.</p></li>
-</ul>
-</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;99th element of element is:&#39;</span><span class="p">,</span> <span class="n">element</span><span class="p">[</span><span class="mi">99</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;99th book of book_titles is:&#39;</span><span class="p">,</span> <span class="n">book_titles</span><span class="p">[</span><span class="mi">99</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;99th element of element is:&#39;</span><span class="p">,</span> <span class="n">element</span><span class="p">[</span><span class="mi">99</span><span class="p">])</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;99th book of book_titles is:&#39;</span><span class="p">,</span> <span class="n">book_titles</span><span class="p">[</span><span class="mi">99</span><span class="p">])</span>
 
-<span class="ne">IndexError</span>: string index out of range
+<span class="ne">IndexError</span>: list index out of range
 </pre></div>
 </div>
 </div>
@@ -820,7 +800,7 @@ helium
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <section id="exercise-1-fill-in-the-blanks">
-<h3>Exercise 1: Fill in the Blanks<a class="headerlink" href="#exercise-1-fill-in-the-blanks" title="Link to this heading">#</a></h3>
+<h3>Exercise 1: Fill in the blanks<a class="headerlink" href="#exercise-1-fill-in-the-blanks" title="Link to this heading">#</a></h3>
 <p>Fill in the blanks so that the program below produces the output shown.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>values = ____
 values.____(1)
@@ -854,7 +834,7 @@ second time: [3, 5]
 </section>
 <hr class="docutils" />
 <section id="exercise-2-how-large-is-a-slice">
-<h3>Exercise 2: How Large is a Slice?<a class="headerlink" href="#exercise-2-how-large-is-a-slice" title="Link to this heading">#</a></h3>
+<h3>Exercise 2: How large is a slice?<a class="headerlink" href="#exercise-2-how-large-is-a-slice" title="Link to this heading">#</a></h3>
 <p>If ‘low’ and ‘high’ are both non-negative integers, how long is the list <code class="docutils literal notranslate"><span class="pre">values[low:high]</span></code>?</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution</p>
@@ -863,12 +843,12 @@ second time: [3, 5]
 </section>
 <hr class="docutils" />
 <section id="exercise-3-working-with-the-end">
-<h3>Exercise 3: Working With the End<a class="headerlink" href="#exercise-3-working-with-the-end" title="Link to this heading">#</a></h3>
+<h3>Exercise 3: Working with the end<a class="headerlink" href="#exercise-3-working-with-the-end" title="Link to this heading">#</a></h3>
 <p>What does the following program print?</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element</span> <span class="o">=</span> <span class="s1">&#39;helium&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">harrypotter1</span> <span class="o">=</span> <span class="s2">&quot;the philosopher&#39;s stone&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">harrypotter1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -878,7 +858,7 @@ second time: [3, 5]
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e
 </pre></div>
 </div>
 </div>
@@ -887,8 +867,8 @@ second time: [3, 5]
 <ol class="arabic simple">
 <li><p>How does Python interpret a negative index?</p></li>
 <li><p>If a list or string has N elements, what is the most negative index that can safely be used with it, and what location does that index represent?</p></li>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">values</span></code> is a list, what does <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">values[-1]</span></code> do?</p></li>
-<li><p>How can you display all elements but the last one without changing <code class="docutils literal notranslate"><span class="pre">values</span></code>?<br />
+<li><p>If <code class="docutils literal notranslate"><span class="pre">harrypotter1</span></code> is a list, what does <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">harrypotter1[-1]</span></code> do?</p></li>
+<li><p>How can you display all elements but the last one without changing <code class="docutils literal notranslate"><span class="pre">harrypotter1</span></code>?<br />
 (Hint: you will need to combine slicing and negative indexing.)</p></li>
 </ol>
 <div class="dropdown admonition">
@@ -897,19 +877,19 @@ second time: [3, 5]
 <li><p>A negative index begins at the final element.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-(N)</span></code> corresponds to the first index, which is the [0] index.</p></li>
 <li><p>It removes the final element of the list.</p></li>
-<li><p>You could do the following: <code class="docutils literal notranslate"><span class="pre">print(values[0:-1])</span></code></p></li>
+<li><p>You could do the following: <code class="docutils literal notranslate"><span class="pre">print(harrypotter1[0:-1])</span></code></p></li>
 </ol>
 </div>
 </section>
 <hr class="docutils" />
 <section id="exercise-4-stepping-through-a-list">
-<h3>Exercise 4: Stepping Through a List<a class="headerlink" href="#exercise-4-stepping-through-a-list" title="Link to this heading">#</a></h3>
+<h3>Exercise 4: Stepping through a list<a class="headerlink" href="#exercise-4-stepping-through-a-list" title="Link to this heading">#</a></h3>
 <p>What does the following program print?</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element</span> <span class="o">=</span> <span class="s1">&#39;fluorine&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">song</span> <span class="o">=</span> <span class="s1">&#39;despacito&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">song</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">song</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -919,8 +899,8 @@ second time: [3, 5]
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>furn
-eniroulf
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dsaio
+oticapsed
 </pre></div>
 </div>
 </div>
@@ -934,20 +914,20 @@ eniroulf
 <p class="admonition-title">Solution</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">stride</span></code> indicates both the number of steps, and from which end: positive starts from first element, negative from the last element.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">element[1::2]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">song[1::2]</span></code></p></li>
 </ol>
 </div>
 </section>
 <hr class="docutils" />
-<section id="exercise-5-slice-bounds">
-<h3>Exercise 5: Slice Bounds<a class="headerlink" href="#exercise-5-slice-bounds" title="Link to this heading">#</a></h3>
+<section id="exercise-5-slicing">
+<h3>Exercise 5: Slicing<a class="headerlink" href="#exercise-5-slicing" title="Link to this heading">#</a></h3>
 <p>What does the following program print?</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element</span> <span class="o">=</span> <span class="s1">&#39;lithium&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">song</span> <span class="o">=</span> <span class="s1">&#39;blinding lights&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">song</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">song</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">song</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -957,9 +937,9 @@ eniroulf
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>l
 
-lithium
+blinding lights
 </pre></div>
 </div>
 </div>
@@ -968,7 +948,7 @@ lithium
 <div class="dropdown admonition">
 <p class="admonition-title">Solution</p>
 <ol class="arabic simple">
-<li><p>Index <code class="docutils literal notranslate"><span class="pre">[1]</span></code> is the second character <code class="docutils literal notranslate"><span class="pre">i</span></code> (remember, Python is zero indexed). It goes up to but not including index <code class="docutils literal notranslate"><span class="pre">[2]</span></code>. Thus, only <code class="docutils literal notranslate"><span class="pre">i</span></code> is printed.</p></li>
+<li><p>Index <code class="docutils literal notranslate"><span class="pre">[1]</span></code> is the second character <code class="docutils literal notranslate"><span class="pre">l</span></code> (remember, Python is zero indexed). It goes up to but not including index <code class="docutils literal notranslate"><span class="pre">[2]</span></code>. Thus, only <code class="docutils literal notranslate"><span class="pre">l</span></code> is printed.</p></li>
 <li><p>There is no element after index <code class="docutils literal notranslate"><span class="pre">[-1]</span></code>, so an empty line is printed.</p></li>
 <li><p>There is no index <code class="docutils literal notranslate"><span class="pre">[20]</span></code>, so the entire string is captured and printed.</p></li>
 </ol>
@@ -976,7 +956,7 @@ lithium
 </section>
 <hr class="docutils" />
 <section id="exercises-6-sort-and-sorted">
-<h3>Exercises 6: Sort and Sorted<a class="headerlink" href="#exercises-6-sort-and-sorted" title="Link to this heading">#</a></h3>
+<h3>Exercises 6: Sort and sorted<a class="headerlink" href="#exercises-6-sort-and-sorted" title="Link to this heading">#</a></h3>
 <p>What do these two programs print?</p>
 <p>In simple terms, explain the difference between <code class="docutils literal notranslate"><span class="pre">sorted(letters)</span></code> and <code class="docutils literal notranslate"><span class="pre">letters.sort()</span></code>.</p>
 <div class="cell tag_hide-output docutils container">
@@ -1028,7 +1008,7 @@ lithium
 </section>
 <hr class="docutils" />
 <section id="exercise-7-copying-or-not">
-<h3>Exercise 7: Copying (or Not)<a class="headerlink" href="#exercise-7-copying-or-not" title="Link to this heading">#</a></h3>
+<h3>Exercise 7: Copying (or not)<a class="headerlink" href="#exercise-7-copying-or-not" title="Link to this heading">#</a></h3>
 <p>What do these two programs print?</p>
 <p>In simple terms, explain the difference between <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">=</span> <span class="pre">old</span></code> and <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">=</span> <span class="pre">old[:]</span></code>.</p>
 <div class="cell tag_hide-output docutils container">
@@ -1083,7 +1063,7 @@ Thus, changing the contents of either variable will affect the other.</p>
 </section>
 <hr class="docutils" />
 <section id="exercise-8-from-strings-to-lists-and-back">
-<h3>Exercise 8: From Strings to Lists and Back<a class="headerlink" href="#exercise-8-from-strings-to-lists-and-back" title="Link to this heading">#</a></h3>
+<h3>Exercise 8: From strings to lists and back<a class="headerlink" href="#exercise-8-from-strings-to-lists-and-back" title="Link to this heading">#</a></h3>
 <p>Given this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1168,7 +1148,7 @@ list to string: g-o-l-d
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Built-in Functions and Help</p>
+        <p class="prev-next-title">Built-in Functions and help</p>
       </div>
     </a>
     <a class="right-next"
@@ -1196,30 +1176,30 @@ list to string: g-o-l-d
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-lists">What are Lists?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-lists">Indexing Lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-lists">Slicing Lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replacing-list-items">Replacing List Items</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-to-lists">Appending to Lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-list-items">Deleting List Items</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-lists">What are lists?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-lists">Indexing lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-lists">Slicing lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replacing-list-items">Replacing list items</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-to-lists">Appending to lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-list-items">Deleting list items</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-lists">Empty Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-lists">Empty lists</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-may-contain-items-of-different-data-types">Lists may contain items of different data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-are-mutable">Lists are mutable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-strings-are-immutable">Character strings are immutable</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-beyond-the-end">Indexing Beyond the End</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-beyond-the-end">Indexing beyond the end</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-fill-in-the-blanks">Exercise 1: Fill in the Blanks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-how-large-is-a-slice">Exercise 2: How Large is a Slice?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-working-with-the-end">Exercise 3: Working With the End</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-stepping-through-a-list">Exercise 4: Stepping Through a List</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-slice-bounds">Exercise 5: Slice Bounds</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-6-sort-and-sorted">Exercises 6: Sort and Sorted</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-copying-or-not">Exercise 7: Copying (or Not)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-from-strings-to-lists-and-back">Exercise 8: From Strings to Lists and Back</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-fill-in-the-blanks">Exercise 1: Fill in the blanks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-how-large-is-a-slice">Exercise 2: How large is a slice?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-working-with-the-end">Exercise 3: Working with the end</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-stepping-through-a-list">Exercise 4: Stepping through a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-slicing">Exercise 5: Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-6-sort-and-sorted">Exercises 6: Sort and sorted</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-copying-or-not">Exercise 7: Copying (or not)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-from-strings-to-lists-and-back">Exercise 8: From strings to lists and back</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keypoints">Keypoints</a></li>
