@@ -33,3 +33,9 @@ parts:
     - file: docs/pandas/02_Pandas_tabular_data
     - file: docs/pandas/03_Pandas_subsets
     - file: docs/pandas/04_Pandas_loc_iloc
+
+  - caption: Courses at University of Copenhagen
+    chapters:
+    - file: docs/test/2024_ods
+      sections:
+      - file: docs/test/regex_and_frankenstein
