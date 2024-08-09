@@ -35,6 +35,7 @@ parts:
     - file: docs/pandas/04_Pandas_loc_iloc
 
   - caption: Courses at University of Copenhagen
+    maxdepth: 1
     chapters:
     - file: docs/test/2024_ods
       sections:
