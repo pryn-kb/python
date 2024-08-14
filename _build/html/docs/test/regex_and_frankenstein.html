@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>RegEx and Frankenstein &#8212; My sample book</title>
   
@@ -28,35 +29,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/test/regex_and_frankenstein';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -424,14 +425,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="regex-and-frankenstein">
-<h1>RegEx and Frankenstein<a class="headerlink" href="#regex-and-frankenstein" title="Link to this heading">#</a></h1>
+<h1>RegEx and Frankenstein<a class="headerlink" href="#regex-and-frankenstein" title="Permalink to this heading">#</a></h1>
 <p>Online RegEx Tester: <a class="reference external" href="https://regex101.com/">https://regex101.com/</a> is a helpful site for learning how to use regular expressions (Regex).</p>
 <p>W3schools also has a very useful page about RegEx. <a class="reference external" href="https://www.w3schools.com/python/python_regex.asp">https://www.w3schools.com/python/python_regex.asp</a></p>
 <p>Regex’s use is very widespread because RegEx is super smart in relation to text processing, because it can be used to perform advanced searches. RegEx is used for search engines and for search and replace functions. Working with RegEx is definitely an experience in itself, but when you get an insight into the scope of tasks that can be solved with RegEx, you realize that it is an incredibly good tool.</p>
 <p>This notebook doesn’t try to teach you everything about RegEx, but it does try to create learning about it, and only a few of the possibilities are illustrated below.</p>
 <p>In addition to RegEx, this notebook contains many loops and list comprehensions, so that way you can also get an insight into how to write this sort of thing.</p>
 <section id="read-files">
-<h2>Read files<a class="headerlink" href="#read-files" title="Link to this heading">#</a></h2>
+<h2>Read files<a class="headerlink" href="#read-files" title="Permalink to this heading">#</a></h2>
 <p>We get the book Frankenstein from Project Gutenberg and use it for the rest of the workshop. We download the Plain Text UTF-8 version.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -460,7 +461,7 @@ document.write(`
 </div>
 </section>
 <section id="metacharacters">
-<h2>Metacharacters<a class="headerlink" href="#metacharacters" title="Link to this heading">#</a></h2>
+<h2>Metacharacters<a class="headerlink" href="#metacharacters" title="Permalink to this heading">#</a></h2>
 <p>\b \S and \w and the + sign</p>
 <p>These metadatacharacters are relevant when cleaning text data.</p>
 <p>Cleaning the text will often be a fundamental necessity before working on using different methods to analyze the text. Cleaning often consists of removing grammatical characters, ensuring that all uppercase letters are changed to lowercase, and that <a class="reference external" href="https://en.wikipedia.org/wiki/Stop_word">stop words</a> have been filtered out.</p>
@@ -539,7 +540,7 @@ Another Regex pattern that is also used for cleaning is ‘\w+’.
 </div>
 </section>
 <section id="w-along-with-b">
-<h2>w+ along with \b<a class="headerlink" href="#w-along-with-b" title="Link to this heading">#</a></h2>
+<h2>w+ along with \b<a class="headerlink" href="#w-along-with-b" title="Permalink to this heading">#</a></h2>
 <p>Find words with special endings, e.g. <em>day</em>, can be a help to gain insight into where and when the literature takes place.</p>
 <p>Why doesn’t anything happen on a Friday?</p>
 <p>You can also use the endings to find grammatical forms, e.g. words with a long affix will be relatively easy to identify.</p>
@@ -558,7 +559,7 @@ Another Regex pattern that is also used for cleaning is ‘\w+’.
 </div>
 </section>
 <section id="more-metacharacters-as-well-as-pipes-lists-and-question-marks">
-<h2>More metacharacters, as well as pipes, lists and question marks<a class="headerlink" href="#more-metacharacters-as-well-as-pipes-lists-and-question-marks" title="Link to this heading">#</a></h2>
+<h2>More metacharacters, as well as pipes, lists and question marks<a class="headerlink" href="#more-metacharacters-as-well-as-pipes-lists-and-question-marks" title="Permalink to this heading">#</a></h2>
 <p>In literature, comparisons are often used to illustrate points more clearly by putting pictures on what you want to describe. Comparisons also contribute to making the text more lively and interesting.</p>
 <p>But regex makes it a manageable task to retrieve examples of comparisons in Grimm’s fairy tales, because we can find text strings that follow the pattern of a typical comparison.</p>
 <p>We can illustrate it in the following way. We look for phrases whose pattern is either as a … or as an ….</p>
@@ -610,7 +611,7 @@ Another Regex pattern that is also used for cleaning is ‘\w+’.
 </div>
 </section>
 <section id="curly-brackets">
-<h2>Curly brackets<a class="headerlink" href="#curly-brackets" title="Link to this heading">#</a></h2>
+<h2>Curly brackets<a class="headerlink" href="#curly-brackets" title="Permalink to this heading">#</a></h2>
 <p>Curly brackets are for example relevant when making a concordance (word and context).</p>
 <p>We want to find excerpts of text that contain storm, because we are actually interested in pointing down in the text and seeing how exactly the terms are used.</p>
 <p>For this we need to use the full stop ( . ) because it gives us more word characters and {30} searches for us to get 30 word characters before we hit the letters Turk.</p>
@@ -640,7 +641,7 @@ Another Regex pattern that is also used for cleaning is ‘\w+’.
 </div>
 </section>
 <section id="square-brackets-a-z">
-<h2>Square brackets [A-Z]<a class="headerlink" href="#square-brackets-a-z" title="Link to this heading">#</a></h2>
+<h2>Square brackets [A-Z]<a class="headerlink" href="#square-brackets-a-z" title="Permalink to this heading">#</a></h2>
 <p>Find words that start with capital letters</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
