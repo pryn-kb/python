@@ -173,27 +173,25 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to KUB Datalab’s Python Course
+                    Welcome
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">How to..</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">How to...</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_setup.html">Install &amp; Run Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Learn All the New Words</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help_and_documentation.html">Get Help and Find Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mymarkdownfile.html">Here’s my sample title</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admonition_boxes.html">Admonition Boxes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Absolute Beginners</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="101/01_data_types.html">Data Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="101/02_variables_and_assignment.html">Variables and Assignment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="101/03_type_conversion.html">Data Types and Type Conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="101/04_built-in_functions.html">Built-in Functions and Help</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="101/part1.html">Python for Absolute Beginners pt. 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="101/01_data_types.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="101/02_variables_and_assignment.html">Variables and Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="101/03_type_conversion.html">Data Types and Type Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="101/04_built-in_functions.html">Built-in Functions and Help</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="101/05_lists.html">Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="101/06_for_loops.html">For Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="101/07_conditionals.html">Conditionals</a></li>
@@ -437,11 +435,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pd">pd</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">DataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csv">CSV</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nan">NaN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pd">pd</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subset">Subset</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">Transpose</a></li>
@@ -644,15 +642,6 @@ The first number of a slice is <em>included</em>, the last number of a slice is 
 <hr class="docutils" />
 <section id="pandas">
 <h2>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h2>
-<section id="pd">
-<h3>pd<a class="headerlink" href="#pd" title="Link to this heading">#</a></h3>
-<p>Aliasing pandas as <code class="docutils literal notranslate"><span class="pre">pd</span></code> is a widely adopted convention that simplifies the syntax for accessing its functionalities.<br />
-After this statement, you can use <code class="docutils literal notranslate"><span class="pre">pd</span></code> to access all the functionalities provided by the pandas library.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-</section>
 <section id="attributes">
 <h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h3>
 <p>Properties associated with an object in Python. In the context of the pandas library, attributes provide access to specific information or properties of pandas objects like <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
@@ -673,6 +662,15 @@ After this statement, you can use <code class="docutils literal notranslate"><sp
 <section id="nan">
 <h3>NaN<a class="headerlink" href="#nan" title="Link to this heading">#</a></h3>
 <p>NaN stands for “Not a Number.” It is a special floating-point value used to represent missing or undefined data in numerical computations. It is often used in datasets to indicate that a value is missing.</p>
+</section>
+<section id="pd">
+<h3>pd<a class="headerlink" href="#pd" title="Link to this heading">#</a></h3>
+<p>Aliasing pandas as <code class="docutils literal notranslate"><span class="pre">pd</span></code> is a widely adopted convention that simplifies the syntax for accessing its functionalities.<br />
+After this statement, you can use <code class="docutils literal notranslate"><span class="pre">pd</span></code> to access all the functionalities provided by the pandas library.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
 </section>
 <section id="series">
 <h3>Series<a class="headerlink" href="#series" title="Link to this heading">#</a></h3>
@@ -795,11 +793,11 @@ It is a 1-dimensional labeled array capable of holding any data type.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pd">pd</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">DataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csv">CSV</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nan">NaN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pd">pd</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subset">Subset</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">Transpose</a></li>

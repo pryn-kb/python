@@ -173,27 +173,25 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to KUB Datalab’s Python Course
+                    Welcome
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">How to..</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">How to...</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00_setup.html">Install &amp; Run Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dictionary.html">Learn All the New Words</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../help_and_documentation.html">Get Help and Find Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mymarkdownfile.html">Here’s my sample title</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../admonition_boxes.html">Admonition Boxes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Absolute Beginners</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_data_types.html">Data Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_variables_and_assignment.html">Variables and Assignment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_type_conversion.html">Data Types and Type Conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_built-in_functions.html">Built-in Functions and Help</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="part1.html">Python for Absolute Beginners pt. 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_data_types.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_variables_and_assignment.html">Variables and Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_type_conversion.html">Data Types and Type Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_built-in_functions.html">Built-in Functions and Help</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="05_lists.html">Lists</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">For Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_conditionals.html">Conditionals</a></li>
@@ -604,38 +602,6 @@ Example: <code class="docutils literal notranslate"><span class="pre">for</span>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List of pages read in each book</span>
-<span class="n">pages_read</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">75</span><span class="p">]</span>
-
-<span class="c1"># Loop through each book&#39;s pages read</span>
-<span class="k">for</span> <span class="n">pages</span> <span class="ow">in</span> <span class="n">pages_read</span><span class="p">:</span>
-    <span class="c1"># Calculate the total pages read and the remaining pages</span>
-    <span class="n">total_pages</span> <span class="o">=</span> <span class="n">pages</span>
-    <span class="n">pages_remaining</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">-</span> <span class="n">pages</span>
-    
-    <span class="c1"># Print the results</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For a book with&quot;</span><span class="p">,</span> <span class="n">pages</span><span class="p">,</span> <span class="s2">&quot;pages read so far,&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total pages read:&quot;</span><span class="p">,</span> <span class="n">total_pages</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pages remaining to reach 200:&quot;</span><span class="p">,</span> <span class="n">pages_remaining</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For a book with 45 pages read so far,
-Total pages read: 45
-Pages remaining to reach 200: 155
-For a book with 120 pages read so far,
-Total pages read: 120
-Pages remaining to reach 200: 80
-For a book with 75 pages read so far,
-Total pages read: 75
-Pages remaining to reach 200: 125
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List of pages read in a book of 200 pages</span>
 <span class="n">pages_read</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">75</span><span class="p">]</span>
 
@@ -1034,7 +1000,7 @@ data = [1,2,2,5]
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="c1"># use a if the number is a multiple of 3, otherwise use b</span>
 <span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">if</span> <span class="p">(</span><span class="n">Number</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1079,7 +1045,7 @@ data = [1,2,2,5]
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">seasons</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Spring&#39;</span><span class="p">,</span> <span class="s1">&#39;Summer&#39;</span><span class="p">,</span> <span class="s1">&#39;Fall&#39;</span><span class="p">,</span> <span class="s1">&#39;Winter&#39;</span><span class="p">]</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My favorite season is &#39;</span><span class="p">,</span> <span class="n">seasons</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
 
