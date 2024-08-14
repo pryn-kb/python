@@ -26,12 +26,14 @@ parts:
 
   - caption: Python and Pandas
     chapters:
-    - file: docs/pandas/00_pandas_start
-    - file: docs/pandas/01_pandas_dataframe
-    - file: docs/pandas/02_pandas_tabular_data
-    - file: docs/pandas/03_pandas_subsets
-    - file: docs/pandas/04_pandas_loc_iloc
-    - file: docs/pandas/05_pandas_summary_statistics
+    - file: docs/pandas/getting_started
+      sections:
+      - file: docs/pandas/00_pandas_start
+      - file: docs/pandas/01_pandas_dataframe
+      - file: docs/pandas/02_pandas_tabular_data
+      - file: docs/pandas/03_pandas_subsets
+      - file: docs/pandas/04_pandas_loc_iloc
+      - file: docs/pandas/05_pandas_summary_statistics
 
   - caption: Other
     maxdepth: 1
