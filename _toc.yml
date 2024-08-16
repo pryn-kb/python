@@ -8,6 +8,7 @@ parts:
     chapters:
     - file: docs/howto/setup
     - file: docs/howto/interact
+    - file: docs/howto/sign_up
     - file: docs/howto/dictionary
     - file: docs/howto/help_and_documentation    
 
