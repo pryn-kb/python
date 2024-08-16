@@ -3,6 +3,7 @@
 
 format: jb-book
 root: docs/intro
+
 parts:
   - caption: How to...
     chapters:
