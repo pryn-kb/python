@@ -6,6 +6,7 @@ root: docs/intro
 parts:
   - caption: How to...
     chapters:
+    - file: docs/sign_up
     - file: docs/00_setup
     - file: docs/dictionary
     - file: docs/help_and_documentation    
