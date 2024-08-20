@@ -10,7 +10,10 @@ parts:
     - file: docs/howto/sign_up
     - file: docs/howto/setup
     - file: docs/howto/interact
-    - file: docs/howto/dictionary
+    - file: docs/howto/dictionaries
+      sections:
+      - file: docs/howto/dictionary_101
+      - file: docs/howto/dictionary_pandas
     - file: docs/howto/help_and_documentation    
 
   - caption: Python for Absolute Beginners
