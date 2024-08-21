@@ -46,4 +46,4 @@ html:
   extra_footer: <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
     <img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
      Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0 License</a>.
-  home_page_in_navbar: false  # Whether to include your home page in the left Navigation Bar
+  home_page_in_navbar: true  # Whether to include your home page in the left Navigation Bar
