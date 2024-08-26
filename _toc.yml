@@ -41,9 +41,9 @@ parts:
       - file: docs/pandas/04_pandas_loc_iloc
       - file: docs/pandas/05_pandas_summary_statistics
 
-  - caption: Other
-    maxdepth: 1
-    chapters:
-    - file: docs/test/2024_ods
-      sections:
-      - file: docs/test/regex_and_frankenstein
+#  - caption: Other
+#    maxdepth: 1
+#    chapters:
+#    - file: docs/test/2024_ods
+#      sections:
+#      - file: docs/test/regex_and_frankenstein
