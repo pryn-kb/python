@@ -12,7 +12,7 @@ sphinx:
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
+title: KUB Datalab - Python
 author: <a href="https://kub.kb.dk/datalab" target="_blank">KUB Datalab</a>
 logo: logo.png
 copyright: false
