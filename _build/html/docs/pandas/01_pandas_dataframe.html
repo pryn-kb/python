@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Pandas DataFrame &#8212; My sample book</title>
   
@@ -29,35 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/pandas/01_pandas_dataframe';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -445,10 +444,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-dataframe">
-<h1>Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#pandas-dataframe" title="Permalink to this heading">#</a></h1>
+<h1>Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#pandas-dataframe" title="Link to this heading">#</a></h1>
 <section id="import-pandas">
-<h2>Import Pandas<a class="headerlink" href="#import-pandas" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
+<h2>Import Pandas<a class="headerlink" href="#import-pandas" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This line imports the pandas library and aliases it as &#39;pd&#39;.</span>
 
@@ -465,14 +464,14 @@ After this statement, you can use <code class="docutils literal notranslate"><sp
 </section>
 <hr class="docutils" />
 <section id="pandas-data-table-representation">
-<h2>Pandas data table representation<a class="headerlink" href="#pandas-data-table-representation" title="Permalink to this heading">#</a></h2>
+<h2>Pandas data table representation<a class="headerlink" href="#pandas-data-table-representation" title="Link to this heading">#</a></h2>
 <p><img alt="Representation of a Pandas DataFrame" src="../../_images/01_table_dataframe.svg" /></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a two-dimensional data structure in the Pandas library, designed to hold and manage data efficiently. It organizes data into labeled columns and rows, allowing you to store various types of data, such as numbers, text, and categorical values, all within the same structure.</p>
 <section id="creating-our-first-dataframe">
-<h3>Creating our first <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#creating-our-first-dataframe" title="Permalink to this heading">#</a></h3>
+<h3>Creating our first <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#creating-our-first-dataframe" title="Link to this heading">#</a></h3>
 <p>We start by creating three lists of equal length (i.e., containing the same amount of elements).<br />
 These lists will be used as columns for a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, with each list representing a column and each element within the list representing a row in that column.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create three lists named &#39;name&#39;, &#39;age&#39;, and &#39;sex&#39;.</span>
 
@@ -486,7 +485,7 @@ These lists will be used as columns for a <code class="docutils literal notransl
 <p>We use lists <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code>, and <code class="docutils literal notranslate"><span class="pre">sex</span></code> to fill in the columns.<br />
 Each list corresponds to a column in the DataFrame.<br />
 <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Age</span></code>, and <code class="docutils literal notranslate"><span class="pre">Sex</span></code> are the titles of these columns.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DataFrame named &#39;df&#39; based on three lists.</span>
 
@@ -497,20 +496,25 @@ Each list corresponds to a column in the DataFrame.<br />
 </div>
 </section>
 <section id="dataframes-and-dictionaries">
-<h3><code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> and <code class="docutils literal notranslate"><span class="pre">dictionaries</span></code><a class="headerlink" href="#dataframes-and-dictionaries" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> and <code class="docutils literal notranslate"><span class="pre">dictionaries</span></code><a class="headerlink" href="#dataframes-and-dictionaries" title="Link to this heading">#</a></h3>
 <p>Creating a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> in pandas is similar to creating a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>. The <code class="docutils literal notranslate"><span class="pre">key</span></code>s in the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> become the column names, while the <code class="docutils literal notranslate"><span class="pre">value</span></code>s, which are <code class="docutils literal notranslate"><span class="pre">list</span></code>s or <code class="docutils literal notranslate"><span class="pre">array</span></code>s, form the columns’ data.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>For more information on <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>s in Python, see <a class="reference external" href="https://www.geeksforgeeks.org/python-dictionary/">GeeksforGeeks</a>.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the DataFrame &#39;df&#39;.</span>
 
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -557,50 +561,68 @@ Each list corresponds to a column in the DataFrame.<br />
   </tbody>
 </table>
 </div></div></div>
+</details>
 </div>
 <p>In a spreadsheet software, the table representation of our data would look very similar</p>
 <p><img alt="Table representaion in spreadsheet software" src="../../_images/01_table_spreadsheet.png" /></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the type of the &#39;df&#39; object using the &#39;type()&#39; function.</span>
 
 <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 </section>
 <hr class="docutils" />
 <section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h2>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute to determine the dimensions of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.<br />
 It returns a tuple representing the number of rows and columns (rows, columns).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 3)
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>And we can use the <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> attribute to view the data types of each column in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.<br />
 This command provides information about the data type of each column, such as integer, float, or object (string).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name    object
 Age      int64
@@ -609,6 +631,7 @@ dtype: object
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>When asking for the <code class="docutils literal notranslate"><span class="pre">shape</span></code> or <code class="docutils literal notranslate"><span class="pre">dtypes</span></code>, no parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> are used. Both are an attribute of <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code>. (<code class="docutils literal notranslate"><span class="pre">Series</span></code> will be explained later.)</p>
 <p>Attributes of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code> do not need <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
@@ -616,10 +639,10 @@ dtype: object
 </section>
 <hr class="docutils" />
 <section id="transposing-a-dataframe">
-<h2>Transposing a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#transposing-a-dataframe" title="Permalink to this heading">#</a></h2>
+<h2>Transposing a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#transposing-a-dataframe" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">transpose()</span></code> method swaps the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>’s rows and columns, creating ‘df_transposed’.<br />
 Transposing is useful for reshaping data, making it easier to compare rows or apply certain operations that are typically column-based.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transpose the DataFrame &#39;df&#39; using the &#39;transpose()&#39; method.</span>
 
@@ -628,14 +651,19 @@ Transposing is useful for reshaping data, making it easier to compare rows or ap
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the DataFrame &#39;df_transposed&#39;.</span>
 
 <span class="n">df_transposed</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -682,13 +710,14 @@ Transposing is useful for reshaping data, making it easier to compare rows or ap
   </tbody>
 </table>
 </div></div></div>
+</details>
 </div>
 <section id="renaming-columns">
-<h3>Renaming columns<a class="headerlink" href="#renaming-columns" title="Permalink to this heading">#</a></h3>
+<h3>Renaming columns<a class="headerlink" href="#renaming-columns" title="Link to this heading">#</a></h3>
 <p>We can rename the columns of our <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> after creation.<br />
 This is done by assigning a new list of column names to <code class="docutils literal notranslate"><span class="pre">df.columns</span></code>.<br />
 The new column names are <code class="docutils literal notranslate"><span class="pre">Names</span></code>, <code class="docutils literal notranslate"><span class="pre">Age</span></code>, and <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, in that order.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the columns of the DataFrame &#39;df&#39;.</span>
 
@@ -698,7 +727,7 @@ The new column names are <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <p>The method below is useful for selectively renaming only one or more columns without changing the entire set of column names:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the &#39;Age&#39; column to &#39;Ages&#39; in the DataFrame &#39;df&#39;.</span>
 
@@ -707,14 +736,19 @@ The new column names are <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Our DataFrame now looks like this:</span>
 
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -761,20 +795,26 @@ The new column names are <code class="docutils literal notranslate"><span class=
   </tbody>
 </table>
 </div></div></div>
+</details>
 </div>
 </section>
 </section>
 <hr class="docutils" />
 <section id="series">
-<h2><code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#series" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#series" title="Link to this heading">#</a></h2>
 <p><img alt="DataFrame Series" src="../../_images/01_table_series.svg" /></p>
 <p>Each column in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a <code class="docutils literal notranslate"><span class="pre">Series</span></code>. When we access a column in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, this actually returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object containing all the data in that column.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ages&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    22
 1    35
@@ -783,26 +823,33 @@ Name: Ages, dtype: int64
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the type of the &#39;Ages&#39; column in &#39;df&#39; using the &#39;type()&#39; function.</span>
 
 <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ages&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="creating-our-own-series">
-<h3>Creating our own <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#creating-our-own-series" title="Permalink to this heading">#</a></h3>
+<h3>Creating our own <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#creating-our-own-series" title="Link to this heading">#</a></h3>
 <p>We can create and name a <code class="docutils literal notranslate"><span class="pre">Series</span></code> in the following way.<br />
 The <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter assigns the name ‘Fare’ to the Series.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a pandas Series named &#39;fare&#39; with specified values.</span>
 
@@ -812,14 +859,19 @@ The <code class="docutils literal notranslate"><span class="pre">name</span></co
 </div>
 </div>
 <p>This outputs the values along with their index positions and the name of the <code class="docutils literal notranslate"><span class="pre">Series</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the &#39;fare&#39; Series.</span>
 
 <span class="n">fare</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     7.2500
 1    71.2833
@@ -828,29 +880,36 @@ Name: Fare, dtype: float64
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the data type of &#39;fare&#39; using the &#39;type()&#39; function.</span>
 
 <span class="nb">type</span><span class="p">(</span><span class="n">fare</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 </section>
 <hr class="docutils" />
 <section id="appending-series">
-<h2>Appending <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#appending-series" title="Permalink to this heading">#</a></h2>
+<h2>Appending <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#appending-series" title="Link to this heading">#</a></h2>
 <p>We can add a <code class="docutils literal notranslate"><span class="pre">Series</span></code> as a new column to a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, extending it horizontally.<br />
 Here, the name of the ‘fare’ <code class="docutils literal notranslate"><span class="pre">Series</span></code> (‘Fare’) becomes the column name in the updated <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concatenate the &#39;fare&#39; Series to the &#39;df&#39; DataFrame along the columns (axis=1).</span>
 
@@ -863,14 +922,19 @@ Here, the name of the ‘fare’ <code class="docutils literal notranslate"><spa
 <p><code class="docutils literal notranslate"><span class="pre">axis=0</span></code> (Default): Concatenation along Rows<br />
 <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>: Concatenation along Columns</p>
 <p>(When concatenating along <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>, Pandas aligns on the index by default. If indices do not match, you may see <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values where data is missing.)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the updated DataFrame &#39;df&#39;.</span>
 
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -921,27 +985,33 @@ Here, the name of the ‘fare’ <code class="docutils literal notranslate"><spa
   </tbody>
 </table>
 </div></div></div>
+</details>
 </div>
 <section id="creating-a-new-column-based-on-existing-data">
-<h3>Creating a new column based on existing data<a class="headerlink" href="#creating-a-new-column-based-on-existing-data" title="Permalink to this heading">#</a></h3>
+<h3>Creating a new column based on existing data<a class="headerlink" href="#creating-a-new-column-based-on-existing-data" title="Link to this heading">#</a></h3>
 <p>We can also create a new column based on the data in an existing column.</p>
 <p>Here, we create a new column ‘Age_in_3_years’ in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> ‘df’.<br />
 This column is calculated by adding 3 to each value in the ‘Ages’ column.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age_in_3_years&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ages&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the updated DataFrame &#39;df&#39;.</span>
 
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -996,12 +1066,13 @@ This column is calculated by adding 3 to each value in the ‘Ages’ column.</p
   </tbody>
 </table>
 </div></div></div>
+</details>
 </div>
 </section>
 </section>
 <hr class="docutils" />
 <section id="exercise">
-<h2><i class="fa-solid fa-pencil"></i> Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2><i class="fa-solid fa-pencil"></i> Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>Create a new column called ‘Fare_in_DKK’ based on the column ‘Fare’.</p>
 <p>We assume the old fare prices to be in GBP and the exchange rate to be £1 = 8.7 DKK</p>
 <div class="dropdown admonition">
@@ -1015,7 +1086,7 @@ Each fare value in GBP is multiplied by the exchange rate to obtain the correspo
 </section>
 <hr class="docutils" />
 <section id="key-points">
-<h2>Key points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<h2>Key points<a class="headerlink" href="#key-points" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Import the library, aka <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>.</p></li>
 <li><p>A table of data is stored as a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p></li>
