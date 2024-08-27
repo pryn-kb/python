@@ -1,9 +1,20 @@
+sphinx:
+  # List of additional Sphinx extensions to enable
+  extra_extensions:
+    - sphinx.ext.todo  # Enables the 'todo' extension to allow the use of 'todo' directives
+
+  # Additional configuration settings for Sphinx
+  config:
+    # Setting to include 'todo' items in the output
+    todo_include_todos: true  # Ensures that 'todo' items are included in the final build
+
+
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: My sample book
 author: <a href="https://kub.kb.dk/datalab" target="_blank">KUB Datalab</a>
-logo: kub_datalab_logo.jpeg
+logo: logo.png
 copyright: false
 
 # Force re-execution of notebooks on each build.
@@ -35,3 +46,4 @@ html:
   extra_footer: <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
     <img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
      Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0 License</a>.
+  home_page_in_navbar: true  # Whether to include your home page in the left Navigation Bar
