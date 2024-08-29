@@ -1,3 +1,7 @@
+# This Python script runs through all .ipynb files in "docs" and its sub-folders
+# and adds "hide-output" tags to all code cells.
+# It needs to be run manually.
+
 import os
 import nbformat
 
