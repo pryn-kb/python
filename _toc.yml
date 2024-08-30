@@ -9,6 +9,7 @@ parts:
     chapters:
     - file: docs/howto/sign_up
     - file: docs/howto/setup
+    - file: docs/howto/jupyterlab
     - file: docs/howto/interact
     - file: docs/howto/dictionaries
       sections:
