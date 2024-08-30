@@ -1,0 +1,742 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Guide to Opening and Navigating JupyterLab &#8212; KUB Datalab - Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/howto/jupyterlab';</script>
+    <script src="../../_static/custom.js?v=e8afc0c0"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Interact With This Book" href="interact.html" />
+    <link rel="prev" title="Install &amp; Run Python" href="setup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="KUB Datalab - Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="KUB Datalab - Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">How to...</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sign_up.html">Sign Up for a Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Install &amp; Run Python <i aria-hidden="true" class="fab fa-python"></i></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Guide to Opening and Navigating JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interact.html">Interact With This Book</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Learn All the New Words</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="dictionary_101.html">Dictionary for Absolute Beginners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionary_pandas.html">Dictionary for Pandas</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="help_and_documentation.html">Get Help and Find Documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Absolute Beginners</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../101/part1.html">Part 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../101/01_data_types.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/02_variables_and_assignment.html">Variables and Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/03_type_conversion.html">Data Types and Type Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/04_built-in_functions.html">Built-in Functions and Help</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../101/part2.html">Part 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../101/05_lists.html">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/06_for_loops.html">For Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/07_conditionals.html">Conditionals</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python and Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pandas/getting_started.html">Getting Started with Data Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/00_pandas_start.html">Getting Started with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/01_pandas_dataframe.html">Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/02_pandas_tabular_data.html">Read and Write Tabular Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/03_pandas_subsets.html">Subsets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/04_pandas_loc_iloc.html"><code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/05_pandas_summary_statistics.html">Summary Statistics</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KUBDatalab/python" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KUBDatalab/python/issues/new?title=Issue%20on%20page%20%2Fdocs/howto/jupyterlab.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/howto/jupyterlab.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Guide to Opening and Navigating JupyterLab</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-macos-users"><i aria-hidden="true" class="fab fa-apple"></i> For macOS Users</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-jupyterlab">Step 1: Open JupyterLab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-navigate-the-file-directory-system">Step 2: Navigate the File/Directory System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-windows-users"><i aria-hidden="true" class="fab fa-windows"></i> For Windows Users</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Step 1: Open JupyterLab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 2: Navigate the File/Directory System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-tips-for-both-macos-and-windows-users"><i aria-hidden="true" class="fab fa-apple"></i> <i aria-hidden="true" class="fab fa-windows"></i> Common Tips for Both macOS and Windows Users</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="guide-to-opening-and-navigating-jupyterlab">
+<h1>Guide to Opening and Navigating JupyterLab<a class="headerlink" href="#guide-to-opening-and-navigating-jupyterlab" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="for-macos-users">
+<h2><i class="fab fa-apple" aria-hidden="true"></i> For macOS Users<a class="headerlink" href="#for-macos-users" title="Link to this heading">#</a></h2>
+<section id="step-1-open-jupyterlab">
+<h3>Step 1: Open JupyterLab<a class="headerlink" href="#step-1-open-jupyterlab" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Using Terminal</strong>:</p>
+<ul>
+<li><p><strong>Open Terminal</strong>:</p>
+<ul class="simple">
+<li><p>You can find Terminal by using Spotlight Search (press <code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Space</span></code> and type “Terminal”) or by navigating to <code class="docutils literal notranslate"><span class="pre">Applications</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Utilities</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Navigate to Your Project Directory</strong> (Optional):</p>
+<ul>
+<li><p>If you want to start JupyterLab in a specific directory, use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command to navigate there. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>path/to/your/project
+</pre></div>
+</div>
+</li>
+<li><p>If you’re unsure of the path, you can drag the folder directly into the Terminal window, and it will automatically input the correct path.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Using Finder</strong> (Alternative Method):</p>
+<ul class="simple">
+<li><p><strong>Open the Desired Folder in Finder</strong>:</p>
+<ul>
+<li><p>Navigate to the folder where you want to start JupyterLab.</p></li>
+</ul>
+</li>
+<li><p><strong>Open Terminal from Finder</strong>:</p>
+<ul>
+<li><p>Right-click on the folder while holding the <code class="docutils literal notranslate"><span class="pre">Control</span></code> key (or use a two-finger tap on a trackpad) and select <strong>“New Terminal at Folder”</strong>.</p></li>
+<li><p>If you don’t see this option, you might need to enable the “New Terminal at Folder” service. To do this:</p>
+<ul>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Preferences</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Keyboard</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Shortcuts</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Services</span></code>.</p></li>
+<li><p>Check the box next to “New Terminal at Folder” under the “Files and Folders” section.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Start JupyterLab</strong>:</p>
+<ul>
+<li><p>In Terminal, type the following command and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+</li>
+<li><p>JupyterLab will open in your default web browser. If it doesn’t, copy the URL provided in the Terminal and paste it into your browser.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="step-2-navigate-the-file-directory-system">
+<h3>Step 2: Navigate the File/Directory System<a class="headerlink" href="#step-2-navigate-the-file-directory-system" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>File Browser</strong>:</p>
+<ul class="simple">
+<li><p>On the left sidebar of JupyterLab, you’ll see the <strong>File Browser</strong>. This shows the directory contents of the folder where JupyterLab was started.</p></li>
+<li><p>You can open folders by clicking on them. Files (e.g., notebooks, Python scripts) can be opened by clicking on them.</p></li>
+</ul>
+</li>
+<li><p><strong>Create New Files and Folders</strong>:</p>
+<ul class="simple">
+<li><p>To create a new file or folder, right-click anywhere in the File Browser and select <strong>New Folder</strong> or <strong>New File</strong>. You can also click the <code class="docutils literal notranslate"><span class="pre">+</span></code> icon at the top of the File Browser.</p></li>
+</ul>
+</li>
+<li><p><strong>Upload Files</strong>:</p>
+<ul class="simple">
+<li><p>You can drag and drop files from your Finder directly into the File Browser in JupyterLab.</p></li>
+</ul>
+</li>
+<li><p><strong>Navigate Between Folders</strong>:</p>
+<ul class="simple">
+<li><p>Use the arrows next to folders to expand and collapse them.</p></li>
+<li><p>You can also use the breadcrumbs at the top of the File Browser to navigate back to parent directories.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="for-windows-users">
+<h2><i class="fab fa-windows" aria-hidden="true"></i> For Windows Users<a class="headerlink" href="#for-windows-users" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Step 1: Open JupyterLab<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Using Command Prompt</strong>:</p>
+<ul>
+<li><p><strong>Open Command Prompt</strong>:</p>
+<ul class="simple">
+<li><p>You can find it by searching “cmd” in the Start menu.</p></li>
+</ul>
+</li>
+<li><p><strong>Navigate to Your Project Directory</strong> (Optional):</p>
+<ul>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command to navigate to your desired directory. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\p</span>ath<span class="se">\t</span>o<span class="se">\y</span>our<span class="se">\p</span>roject
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Using File Explorer</strong> (Alternative Method):</p>
+<ul class="simple">
+<li><p><strong>Open the Desired Folder in File Explorer</strong>:</p>
+<ul>
+<li><p>Navigate to the folder where you want to start JupyterLab.</p></li>
+</ul>
+</li>
+<li><p><strong>Open Command Prompt from File Explorer</strong>:</p>
+<ul>
+<li><p>Right-click on the folder while holding the <code class="docutils literal notranslate"><span class="pre">Shift</span></code> key and select <strong>“Open command window here”</strong> or <strong>“Open PowerShell window here”</strong>. This depends on your Windows version.</p></li>
+<li><p>On newer versions of Windows 10 and 11, this option might be replaced with <strong>“Open in Terminal”</strong>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Start JupyterLab</strong>:</p>
+<ul>
+<li><p>In the Command Prompt, PowerShell, or Terminal window that opens, type the following command and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+</li>
+<li><p>JupyterLab will open in your default web browser. If it doesn’t, copy the URL provided in the command prompt and paste it into your browser.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id2">
+<h3>Step 2: Navigate the File/Directory System<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>File Browser</strong>:</p>
+<ul class="simple">
+<li><p>On the left sidebar of JupyterLab, you’ll see the <strong>File Browser</strong>. This displays the contents of the directory where JupyterLab was started.</p></li>
+<li><p>Click on folders to open them and view their contents. Click on files (e.g., notebooks, Python scripts) to open them in JupyterLab.</p></li>
+</ul>
+</li>
+<li><p><strong>Create New Files and Folders</strong>:</p>
+<ul class="simple">
+<li><p>Right-click in the File Browser to create a new file or folder. Alternatively, click the <code class="docutils literal notranslate"><span class="pre">+</span></code> icon at the top of the File Browser.</p></li>
+</ul>
+</li>
+<li><p><strong>Upload Files</strong>:</p>
+<ul class="simple">
+<li><p>Drag and drop files from File Explorer directly into the JupyterLab File Browser.</p></li>
+</ul>
+</li>
+<li><p><strong>Navigate Between Folders</strong>:</p>
+<ul class="simple">
+<li><p>Use the arrows next to folders to expand and collapse them.</p></li>
+<li><p>The breadcrumbs at the top of the File Browser allow you to navigate back to parent directories.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="common-tips-for-both-macos-and-windows-users">
+<h2><i class="fab fa-apple" aria-hidden="true"></i> <i class="fab fa-windows" aria-hidden="true"></i> Common Tips for Both macOS and Windows Users<a class="headerlink" href="#common-tips-for-both-macos-and-windows-users" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Opening Files</strong>: Double-click on any file in the File Browser to open it. Jupyter Notebooks will open in a new tab, and text files, Python scripts, and other file types will open in their respective editors.</p></li>
+<li><p><strong>Renaming Files and Folders</strong>: Right-click on a file or folder in the File Browser and select “Rename” to change its name.</p></li>
+<li><p><strong>Running Code Cells in Notebooks</strong>: Inside a Jupyter Notebook, click inside a code cell and press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to execute the code in that cell.</p></li>
+<li><p><strong>Terminal in JupyterLab</strong>: You can open a Terminal within JupyterLab by clicking on the terminal icon in the Launcher (the tab with the <code class="docutils literal notranslate"><span class="pre">+</span></code> icon). This can be useful for running additional commands directly from within JupyterLab.</p></li>
+<li><p><strong>Shutting Down JupyterLab</strong>: To stop the JupyterLab server, go back to your Terminal, Command Prompt, or PowerShell window where JupyterLab was started, and press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code>. Confirm the shutdown if prompted.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/howto"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="setup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Install &amp; Run Python <i class="fab fa-python" aria-hidden="true"></i></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="interact.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Interact With This Book</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-macos-users"><i aria-hidden="true" class="fab fa-apple"></i> For macOS Users</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-jupyterlab">Step 1: Open JupyterLab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-navigate-the-file-directory-system">Step 2: Navigate the File/Directory System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-windows-users"><i aria-hidden="true" class="fab fa-windows"></i> For Windows Users</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Step 1: Open JupyterLab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 2: Navigate the File/Directory System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-tips-for-both-macos-and-windows-users"><i aria-hidden="true" class="fab fa-apple"></i> <i aria-hidden="true" class="fab fa-windows"></i> Common Tips for Both macOS and Windows Users</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://kub.kb.dk/datalab" target="_blank">KUB Datalab</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"> <img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
