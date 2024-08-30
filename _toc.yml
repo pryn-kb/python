@@ -10,6 +10,9 @@ parts:
     - file: docs/howto/sign_up
     - file: docs/howto/setup
     - file: docs/howto/jupyterlab
+      sections:
+      - file: docs/howto/jupyterlab_1
+      - file: docs/howto/jupyterlab_2
     - file: docs/howto/interact
     - file: docs/howto/dictionaries
       sections:
