@@ -42,8 +42,11 @@ parts:
       - file: docs/pandas/01_pandas_dataframe
       - file: docs/pandas/02_pandas_tabular_data
       - file: docs/pandas/03_pandas_subsets
-      - file: docs/pandas/04_pandas_loc_iloc
-      - file: docs/pandas/05_pandas_summary_statistics
+      - file: docs/pandas/04_pandas_summary_statistics
+      - file: docs/pandas/05_pandas_plot
+      - file: docs/pandas/xx_pandas_loc_iloc
+      - file: docs/pandas/xx_03_pandas_subsets
+      - file: docs/pandas/xx_variables
 
 #  - caption: Other
 #    maxdepth: 1
