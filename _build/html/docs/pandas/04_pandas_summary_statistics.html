@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
   
@@ -61,7 +61,7 @@
     <script src="../../_static/custom.js?v=e8afc0c0"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introduction to Pandas .plot() Method" href="05_pandas_plot.html" />
+    <link rel="next" title="Basic Plotting in Pandas" href="05_pandas_plot.html" />
     <link rel="prev" title="Subsets" href="03_pandas_subsets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -219,7 +219,7 @@
 <li class="toctree-l2"><a class="reference internal" href="02_pandas_tabular_data.html">Read and Write Tabular Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_pandas_subsets.html">Subsets</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Summary Statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_pandas_plot.html">Introduction to Pandas <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_pandas_plot.html">Basic Plotting in Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xx_pandas_loc_iloc.html">Out: <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="xx_03_pandas_subsets.html">Out: Subsets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xx_variables.html">Out: Variables</a></li>
@@ -944,8 +944,8 @@ dtype: float64
 </div></div></div>
 </details>
 </div>
-<p>As our interest is the average age for each gender, a subselection on these two columns is made first: <code class="docutils literal notranslate"><span class="pre">titanic[[&quot;Sex&quot;,</span> <span class="pre">&quot;Age&quot;]]</span></code>.<br />
-Next, the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method is applied on the ‘Sex’ column to make a group per category. The average age for each gender is calculated and returned.</p>
+<p>As our interest is the average age for each sex, a subselection on these two columns is made first: <code class="docutils literal notranslate"><span class="pre">titanic[[&quot;Sex&quot;,</span> <span class="pre">&quot;Age&quot;]]</span></code>.<br />
+Next, the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method is applied on the ‘Sex’ column to make a group per category. The average age for each sex is calculated and returned.</p>
 <p>Calculating a given statistic (e.g. <code class="docutils literal notranslate"><span class="pre">mean()</span></code> age) <em>for each category in a column</em> (e.g. male/female in the ‘Sex’ column) is a common pattern. The <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method is used to support this type of operations. This fits in the more general <strong>split-apply-combine</strong> pattern:</p>
 <ul class="simple">
 <li><p><strong>Split</strong> the data into groups.</p></li>
@@ -1029,7 +1029,7 @@ Next, the <code class="docutils literal notranslate"><span class="pre">groupby()
 </div></div></div>
 </details>
 </div>
-<p>It does not make much sense to get the average value of the ‘Pclass’. If we are only interested in the average age for each gender, the selection of columns (rectangular brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> as usual) is supported on the grouped data as well:</p>
+<p>It does not make much sense to get the average value of the ‘Pclass’. If we are only interested in the average age for each sex, the selection of columns (rectangular brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> as usual) is supported on the grouped data as well:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Sex&quot;</span><span class="p">)[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1204,7 +1204,7 @@ Name: Pclass, dtype: int64
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Pandas <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> Method</p>
+        <p class="prev-next-title">Basic Plotting in Pandas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
