@@ -42,7 +42,7 @@ parts:
       - file: docs/pandas/01_pandas_dataframe
       - file: docs/pandas/02_pandas_tabular_data
       - file: docs/pandas/03_pandas_subsets
-      - file: docs/pandas/04_pandas_summary_statistics
+      - file: docs/pandas/04_pandas_descriptive_statistics
       - file: docs/pandas/05_pandas_plot
 
 #  - caption: Other
