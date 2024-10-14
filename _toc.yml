@@ -45,6 +45,13 @@ parts:
       - file: docs/pandas/04_pandas_descriptive_statistics
       - file: docs/pandas/05_pandas_plot
 
+  - caption: Tutorials
+    chapters:
+    - file: docs/tutorials/tutorials
+#      sections:
+#      - file: docs/tutorials/matplotlib
+#      - file: docs/tutorials/numpy
+
 #  - caption: Other
 #    maxdepth: 1
 #    chapters:

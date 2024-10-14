@@ -23,6 +23,9 @@ execute:
   execute_notebooks: force
   allow_errors: true
 
+parse:
+  myst_extended_syntax: true
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
