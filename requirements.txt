@@ -1,6 +1,6 @@
 jupyter-book==1.0.0
 matplotlib
 numpy
-pandas
 openpyxl
+pandas
 pandas[excel]
