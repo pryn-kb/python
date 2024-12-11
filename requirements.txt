@@ -1,5 +1,4 @@
 jupyter-book==1.0.0
-math
 matplotlib
 numpy
 openpyxl
