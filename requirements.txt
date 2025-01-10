@@ -4,3 +4,4 @@ numpy
 openpyxl
 pandas
 pandas[excel]
+altair
