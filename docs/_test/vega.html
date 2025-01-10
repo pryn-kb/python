@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction to Data Visualisation with Vega-Altair &#8212; KUB Datalab - Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/_test/vega';</script>
+    <script src="../../_static/custom.js?v=e8afc0c0"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="KUB Datalab - Python - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="KUB Datalab - Python - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">How to...</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../howto/sign_up.html">Sign Up for a Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/setup.html">Install &amp; Run Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../howto/jupyterlab.html">Get Started with JupyterLab</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../howto/jupyterlab_1.html">Open and Navigate JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/jupyterlab_2.html">Code in JupyterLab</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/interact.html">Interact With This Book</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../howto/dictionaries.html">Learn All the New Words</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../howto/dictionary_101.html">Dictionary for Absolute Beginners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/dictionary_pandas.html">Dictionary for Pandas</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/help_and_documentation.html">Get Help and Find Documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Absolute Beginners</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../101/part1.html">Part 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../101/01_data_types.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/02_variables_and_assignment.html">Variables and Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/03_type_conversion.html">Data Types and Type Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/04_built-in_functions.html">Built-in Functions and Help</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../101/part2.html">Part 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../101/05_lists.html">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/06_for_loops.html">For Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101/07_conditionals.html">Conditionals</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python and Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pandas/getting_started.html">Getting Started with Data Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/00_pandas_start.html">Getting Started with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/01_pandas_dataframe.html">Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/02_pandas_tabular_data.html">Read and Write Tabular Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/03_pandas_subsets.html">Subsets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/04_pandas_descriptive_statistics.html">Descriptive Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/05_pandas_plot.html">Basic Visualisations in Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">List of Tutorials</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KUBDatalab/python" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KUBDatalab/python/issues/new?title=Issue%20on%20page%20%2Fdocs/_test/vega.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/_test/vega.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Data Visualisation with Vega-Altair</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-vega-altair">What is Vega-Altair?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-vega-altair">Why use Vega-Altair?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-and-setup-in-jupyter-lab">Installation and Setup in Jupyter Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-or-upgrading-vega-altair-from-pypi">Installing (or upgrading) Vega-Altair from PyPI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulenotfounderror">ModuleNotFoundError</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-the-jupyter-lab-extension">Enabling the Jupyter Lab extension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-vega-altair">Importing Vega-Altair</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encodings">Encodings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-basic-charts">Creating Basic Charts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">Scatter plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-charts">Line charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">Bar charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-properties">Changing Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-selection">Data selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-exercise">Hands-on Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">Data Transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-rows">Filter rows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-new-columns">Create new columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Hands-on Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customization-and-exploration">Customization and Exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#titles-and-axes-labels">Titles and Axes Labels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">Adding Legends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-charts">Saving Charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-find-information-about-properties">How to find information about properties?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Hands-on Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction-to-data-visualisation-with-vega-altair">
+<h1>Introduction to Data Visualisation with Vega-Altair<a class="headerlink" href="#introduction-to-data-visualisation-with-vega-altair" title="Link to this heading">#</a></h1>
+<p>Welcome to this three-hour course on data visualisation using Vega-Altair.</p>
+<p>In this course, you’ll learn how to use Vega-Altair, a powerful Python library, to create a variety of interactive and static data visualisations.</p>
+<section id="what-is-vega-altair">
+<h2>What is Vega-Altair?<a class="headerlink" href="#what-is-vega-altair" title="Link to this heading">#</a></h2>
+<p>Vega-Altair is a declarative statistical visualisation library for Python. It is based on the Vega and Vega-Lite grammar, which allows you to describe your data visualisation in a structured, high-level way.</p>
+<section id="why-use-vega-altair">
+<h3>Why use Vega-Altair?<a class="headerlink" href="#why-use-vega-altair" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Declarative:</strong> Instead of specifying <em>how</em> to draw a plot, you specify <em>what</em> you want to visualise, and Vega-Altair takes care of the details.</p></li>
+<li><p><strong>Interactive:</strong> Vega-Altair allows for interactive plots that you can pan, zoom, and hover over to inspect the data.</p></li>
+<li><p><strong>Versatile:</strong> You can create a wide variety of chart types, from basic scatter plots and line charts to more complex visualisations.</p></li>
+<li><p><strong>Integration with Pandas:</strong> Vega-Altair works seamlessly with Pandas DataFrames, making it easy to visualise your data.</p></li>
+</ul>
+</section>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>Before starting this course, you should have completed an introductory Python and Jupyter Notebook course, as well as a Pandas course. You should be familiar with:</p>
+<ul class="simple">
+<li><p>Basic Python syntax, such as variables, data types, and control flow.</p></li>
+<li><p>Using Jupyter Notebooks or Jupyter Lab.</p></li>
+<li><p>Pandas DataFrames, and data loading, manipulation and descriptive statistics.</p></li>
+</ul>
+<p>Let’s start!</p>
+</section>
+<section id="installation-and-setup-in-jupyter-lab">
+<h2>Installation and Setup in Jupyter Lab<a class="headerlink" href="#installation-and-setup-in-jupyter-lab" title="Link to this heading">#</a></h2>
+<p>Before we can use Vega-Altair, we need to install it. This guide is intended for people running a local installation of Python and using Jupyter Notebook or Jupyter Lab.</p>
+<section id="installing-or-upgrading-vega-altair-from-pypi">
+<h3>Installing (or upgrading) Vega-Altair from PyPI<a class="headerlink" href="#installing-or-upgrading-vega-altair-from-pypi" title="Link to this heading">#</a></h3>
+<p>Vega-Altair can be installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code> from PyPI. This command installs the vega-altair library using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, Python’s package installer.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>! pip install altair vega
+! pip install --upgrade altair vega
+</pre></div>
+</div>
+</section>
+<section id="modulenotfounderror">
+<h3>ModuleNotFoundError<a class="headerlink" href="#modulenotfounderror" title="Link to this heading">#</a></h3>
+<p>When using Vega-Altair, you may encounter the error message <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code>. This is caused by so-called Vega-Altair dependencies. When you install the vega-altair library for Python, it requires other libraries to function correctly. These required libraries are called dependencies.</p>
+<p>When you install Vega-Altair using pip, Python’s package installer, it automatically installs any required dependencies. However, optional dependencies are not installed by default and must be installed separately if needed.</p>
+</section>
+<section id="enabling-the-jupyter-lab-extension">
+<h3>Enabling the Jupyter Lab extension<a class="headerlink" href="#enabling-the-jupyter-lab-extension" title="Link to this heading">#</a></h3>
+<p>To view the plots, we need to enable the jupyterlab vega extension. This will make altair plots visible. You can do this by running the following code in a code cell:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>! jupyter labextension install @jupyter-vega/jupyterlab-vega
+</pre></div>
+</div>
+</section>
+<section id="importing-vega-altair">
+<h3>Importing Vega-Altair<a class="headerlink" href="#importing-vega-altair" title="Link to this heading">#</a></h3>
+<p>Even though we have now installed Vega-Altair, we still need to import it when we want to use it in our code. This is conventionally done at the top of the script (together with any other imports) to make it easier for future readers (including ourselves!) to see which packages are used.
+Aliasing altair as <code class="docutils literal notranslate"><span class="pre">alt</span></code> is a widely adopted convention that simplifies the syntax for accessing its functionalities.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="basic-syntax">
+<h2>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Link to this heading">#</a></h2>
+<p>Vega-Altair uses a consistent grammar to create visualisations. Here are the key components:</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">alt.Chart(data)</span></code>:</strong> This creates a chart object that takes a Pandas DataFrame as input.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">mark_*()</span></code>:</strong> This specifies the type of mark to use for the chart (e.g. <code class="docutils literal notranslate"><span class="pre">mark_point()</span></code> for scatter plots, <code class="docutils literal notranslate"><span class="pre">mark_line()</span></code> for line plots, <code class="docutils literal notranslate"><span class="pre">mark_bar()</span></code> for bar charts).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">.encode(x='column1',</span> <span class="pre">y='column2',</span> <span class="pre">...)</span></code>:</strong> This maps columns in the DataFrame to visual properties of the marks.</p></li>
+</ol>
+<section id="encodings">
+<h3>Encodings<a class="headerlink" href="#encodings" title="Link to this heading">#</a></h3>
+<p>Encodings are a fundamental concept in Vega-Altair. They specify how the data columns are mapped to visual properties. Some common encodings include:</p>
+<ul class="simple">
+<li><p><strong>x:</strong> The x-position of the mark on the plot.</p></li>
+<li><p><strong>y:</strong> The y-position of the mark on the plot.</p></li>
+<li><p><strong>color:</strong> The color of the mark.</p></li>
+<li><p><strong>size:</strong> The size of the mark.</p></li>
+<li><p><strong>tooltip:</strong> The content of the tooltip that appears when you hover over the mark.</p></li>
+</ul>
+<p>Let’s create a very simple plot with the titanic data!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Load the Titanic dataset from a CSV file into a DataFrame named &#39;titanic&#39;.</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;titanic.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Rename columns</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># Create the plot</span>
+<span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">)</span>
+
+<span class="c1"># Display the chart</span>
+<span class="n">chart</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Load the Titanic dataset from a CSV file into a DataFrame named &#39;titanic&#39;.</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;altair&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<p>Change the code above so that it displays a line chart instead of a scatter plot.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Assuming &#39;data&#39; has been loaded and columns are appropriately renamed</span>
+<span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span>
+<span class="p">)</span>
+
+<span class="n">chart</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="creating-basic-charts">
+<h2>Creating Basic Charts<a class="headerlink" href="#creating-basic-charts" title="Link to this heading">#</a></h2>
+<p>Let’s move on to create some more basic charts: scatter plots, line charts, bar charts and histograms. We will continue with the titanic dataset.</p>
+<section id="scatter-plots">
+<h3>Scatter plots<a class="headerlink" href="#scatter-plots" title="Link to this heading">#</a></h3>
+<p>A scatter plot is a graph in which the values of two variables are plotted along two axes. They can be used to observe relationships between variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="line-charts">
+<h3>Line charts<a class="headerlink" href="#line-charts" title="Link to this heading">#</a></h3>
+<p>A line chart is a graph that displays information as a series of data points called ‘markers’ connected by straight line segments. They are used to visualise trends over time or other continuous variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bar-charts">
+<h3>Bar charts<a class="headerlink" href="#bar-charts" title="Link to this heading">#</a></h3>
+<p>A bar chart is a graph that presents categorical data with rectangular bars with heights or lengths proportional to the values that they represent. They are used to compare values across different categories.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how the <code class="docutils literal notranslate"><span class="pre">Pclass</span></code> is displayed as numerical data.<br />
+If we want to display it as ordinal data instead, we must add the ordinal encoding <code class="docutils literal notranslate"><span class="pre">:O</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass:O&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass:O&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="histograms">
+<h3>Histograms<a class="headerlink" href="#histograms" title="Link to this heading">#</a></h3>
+<p>Histograms are a type of bar chart that visualises the distribution of a single numerical variable. The data is split into bins, and the height of each bar shows how many data points fall within that bin.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="changing-properties">
+<h3>Changing Properties<a class="headerlink" href="#changing-properties" title="Link to this heading">#</a></h3>
+<p>You can customise plots in many different ways by adding extra parameters to the <code class="docutils literal notranslate"><span class="pre">.encode</span></code> method. Here are two common examples:</p>
+<p><strong>Color:</strong> The <code class="docutils literal notranslate"><span class="pre">color</span></code> property can be set to a specific color, and/or it can be mapped to a column in your DataFrame to display different categories in different colors.</p>
+<p><strong>Tooltip:</strong> You can specify tooltips that appear when you hover over the marks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:O&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;redyellowgreen&#39;</span><span class="p">)),</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:O&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;redyellowgreen&#39;</span><span class="p">)),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-selection">
+<h3>Data selection<a class="headerlink" href="#data-selection" title="Link to this heading">#</a></h3>
+<p>Sometimes you only want to visualise some of your data. You can use the <code class="docutils literal notranslate"><span class="pre">transform_filter</span></code> method to select rows in your dataframe, before visualising.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">datum</span><span class="o">.</span><span class="n">Pclass</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">datum</span><span class="o">.</span><span class="n">Pclass</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hands-on-exercise">
+<h3>Hands-on Exercise<a class="headerlink" href="#hands-on-exercise" title="Link to this heading">#</a></h3>
+<p>Use the data above to create the following plots:</p>
+<ol class="arabic simple">
+<li><p>A scatterplot of Age against Fare, where the points are coloured by the Survival, and the tooltips show the Survival, Age and Fare.</p></li>
+<li><p>A bar chart of Pclass and the number of people in each class.</p></li>
+<li><p>A histogram of Age.</p></li>
+</ol>
+<p>Try experimenting with different properties.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>Scatterplot of Age against Fare colored by Survival.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Survived:N&#39;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">scatter_plot</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Bar chart of Pclass with the count of people in each class.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bar_chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span>
+<span class="p">)</span>
+<span class="n">bar_chart</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Histogram of Age.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">histogram</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span>
+<span class="p">)</span>
+<span class="n">histogram</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="data-transformation">
+<h2>Data Transformation<a class="headerlink" href="#data-transformation" title="Link to this heading">#</a></h2>
+<p>Sometimes the data needs to be transformed before visualising it. You have already seen one example with <code class="docutils literal notranslate"><span class="pre">transform_filter</span></code>. Here, we will also cover how to create new columns and how to do aggregations.
+We will continue with the titanic dataset.</p>
+<section id="filter-rows">
+<h3>Filter rows<a class="headerlink" href="#filter-rows" title="Link to this heading">#</a></h3>
+<p>As already mentioned, you can filter rows with <code class="docutils literal notranslate"><span class="pre">transform_filter</span></code>. As an example, let us only look at the people who survived.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;pastel1&#39;</span><span class="p">)),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">datum</span><span class="o">.</span><span class="n">Survived</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;pastel1&#39;</span><span class="p">)),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">datum</span><span class="o">.</span><span class="n">Survived</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-new-columns">
+<h3>Create new columns<a class="headerlink" href="#create-new-columns" title="Link to this heading">#</a></h3>
+<p>You can create new columns based on your existing data by using the <code class="docutils literal notranslate"><span class="pre">transform_calculate</span></code> method. Here is an example where we create a new column called <code class="docutils literal notranslate"><span class="pre">Age_in_days</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;category10&#39;</span><span class="p">)),</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Age_in_days:Q&#39;</span>
+        <span class="c1">#alt.Tooltip(&#39;Age_in_days:Q&#39;, title=&#39;Age in Days&#39;)  # Explicitly define the field and type</span>
+    <span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_calculate</span><span class="p">(</span>
+    <span class="n">Age_in_days</span><span class="o">=</span><span class="s1">&#39;datum.Age * 365&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;category10&#39;</span><span class="p">)),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="s1">&#39;Age_in_days:Q&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="c1">#alt.Tooltip(&#39;Age_in_days:Q&#39;, title=&#39;Age in Days&#39;)  # Explicitly define the field and type</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="p">)</span><span class="o">.</span><span class="n">transform_calculate</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">Age_in_days</span><span class="o">=</span><span class="s1">&#39;datum.Age * 365&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="aggregations">
+<h3>Aggregations<a class="headerlink" href="#aggregations" title="Link to this heading">#</a></h3>
+<p>Aggregations are used to compute summary statistics, such as the mean, median or sum of values of a column. Here, we will create a bar chart where each bar corresponds to a Pclass, and the bar represents the average Fare.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass:O&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mean(Fare)&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass:O&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mean(Fare)&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Hands-on Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a scatter plot of <code class="docutils literal notranslate"><span class="pre">Age</span></code> and <code class="docutils literal notranslate"><span class="pre">Fare</span></code> but only for the people who did not survive.</p></li>
+<li><p>Create a new column called <code class="docutils literal notranslate"><span class="pre">Family_size</span></code> which is the SibSp plus the Parch.</p></li>
+<li><p>Create a bar plot showing the median Age for each Pclass.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>Scatter plot for non-survivors.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">non_survivors_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">datum</span><span class="o">.</span><span class="n">Survived</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="p">)</span>
+<span class="n">non_survivors_plot</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Adding a new column <code class="docutils literal notranslate"><span class="pre">Family_size</span></code>.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Family_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SibSp&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Parch&#39;</span><span class="p">]</span>
+<span class="c1"># Show the new column</span>
+<span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Family_size&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Bar plot of median Age for each Pclass.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">median_age_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;median(Age)&#39;</span>
+<span class="p">)</span>
+<span class="n">median_age_plot</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="customization-and-exploration">
+<h2>Customization and Exploration<a class="headerlink" href="#customization-and-exploration" title="Link to this heading">#</a></h2>
+<p>You can customise your charts in many ways. Here are some important examples:</p>
+<section id="titles-and-axes-labels">
+<h3>Titles and Axes Labels<a class="headerlink" href="#titles-and-axes-labels" title="Link to this heading">#</a></h3>
+<p>You can add titles to the plots and axes labels to clarify what is visualised.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Age of passenger&#39;</span><span class="p">),</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Fare&#39;</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;set1&#39;</span><span class="p">)),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Titanic passenger data&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Age of passenger&#39;</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Fare&#39;</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;set1&#39;</span><span class="p">)),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Titanic passenger data&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-legends">
+<h3>Adding Legends<a class="headerlink" href="#adding-legends" title="Link to this heading">#</a></h3>
+<p>Legends are used to display what the colours or symbols of the plot mean. These are added automatically when you specify the <code class="docutils literal notranslate"><span class="pre">color</span></code> encoding, but you can customize them further.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;tableau10&#39;</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Passenger Class&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Pclass:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;tableau10&#39;</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Passenger Class&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Color Scales</p>
+<p>Did you notice how we have played with different color scales for the passenger class?<br />
+You can read more about the <code class="docutils literal notranslate"><span class="pre">altair.Scale</span></code> <a class="reference external" href="https://altair-viz.github.io/user_guide/generated/core/altair.Scale.html">here</a>.</p>
+</div>
+</section>
+<section id="saving-charts">
+<h3>Saving Charts<a class="headerlink" href="#saving-charts" title="Link to this heading">#</a></h3>
+<p>Once you have created a chart you like, you can save it to a file. Here is how you can save it as a json file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span>
+<span class="p">)</span>
+
+<span class="n">chart</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;titanic_plot.json&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">chart</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;titanic_plot.json&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;alt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-find-information-about-properties">
+<h3>How to find information about properties?<a class="headerlink" href="#how-to-find-information-about-properties" title="Link to this heading">#</a></h3>
+<p>The documentation is very useful to learn about all the different parameters that you can specify. The Vega-Altair documentation can be found here:</p>
+<p><a class="reference external" href="https://altair-viz.github.io/">altair-viz.github.io</a></p>
+<p>The documentation includes many examples of plots.</p>
+<p>You can also use the help functionality within Python, such as <code class="docutils literal notranslate"><span class="pre">help(alt.Chart().encode)</span></code>.</p>
+</section>
+<section id="id2">
+<h3>Hands-on Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Change the axis labels to be more descriptive.</p></li>
+<li><p>Change the legend title to something more specific.</p></li>
+<li><p>Save one of the plots you have created so far.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/_test"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-vega-altair">What is Vega-Altair?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-vega-altair">Why use Vega-Altair?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-and-setup-in-jupyter-lab">Installation and Setup in Jupyter Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-or-upgrading-vega-altair-from-pypi">Installing (or upgrading) Vega-Altair from PyPI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulenotfounderror">ModuleNotFoundError</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-the-jupyter-lab-extension">Enabling the Jupyter Lab extension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-vega-altair">Importing Vega-Altair</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encodings">Encodings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-basic-charts">Creating Basic Charts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">Scatter plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-charts">Line charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">Bar charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-properties">Changing Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-selection">Data selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-exercise">Hands-on Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">Data Transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-rows">Filter rows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-new-columns">Create new columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Hands-on Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customization-and-exploration">Customization and Exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#titles-and-axes-labels">Titles and Axes Labels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">Adding Legends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-charts">Saving Charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-find-information-about-properties">How to find information about properties?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Hands-on Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://kub.kb.dk/datalab" target="_blank">KUB Datalab</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"> <img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
