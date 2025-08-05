@@ -415,7 +415,9 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-specific-rows-with-loc">Filtering specific rows with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-iloc-for-positional-indexing">Using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> for positional indexing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inclusive-vs-exclusive-slicing">Inclusive vs. Exclusive Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-loc-and-iloc-for-complex-conditions">Using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> for complex conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises"><i class="fa-solid fa-pencil"></i> Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values-with-loc-and-iloc">Handling missing values with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code></a></li>
 </ul>
 </li>
@@ -1425,7 +1427,7 @@ It returns a tuple representing the number of rows and columns (rows, columns).<
 <p>When slicing with <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>, the slicing is <strong>exclusive</strong> of the end position:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select rows 0 through 2 (exclusive of 3) and the first two columns using .iloc[].</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select rows 0 through 2 (exclusive of 3) and columns 0 and 1 (exclusive of 2) using .iloc[].</span>
 
 <span class="n">titanic</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
@@ -1481,330 +1483,40 @@ It returns a tuple representing the number of rows and columns (rows, columns).<
 </details>
 </div>
 </section>
-<section id="using-loc-and-iloc-for-complex-conditions">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> for complex conditions<a class="headerlink" href="#using-loc-and-iloc-for-complex-conditions" title="Link to this heading">#</a></h3>
+</section>
+<section id="exercises">
+<h2><i class="fa-solid fa-pencil"></i> Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">loc</span></code> to find the passenger named “Dooley, Mr. Patrick”</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> to find the ~~alien~~ 8. passenger</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> to find the value in row 100, column 4</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">str.contains()</span></code> to find all Reverends (“Rev.”)</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>titanic.loc[titanic[‘Name’] == “Dooley, Mr. Patrick”]</p></li>
+<li><p>titanic.iloc[7]</p></li>
+<li><p>titanic.iloc[99, 3]</p></li>
+<li><p>titanic.loc[titanic[‘Name’].str.contains(“Rev.”, case=False)]</p></li>
+</ol>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Using .loc[] and .iloc[] for complex conditions</p>
 <p>You can use both <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> to filter rows based on more complex conditions, combining multiple criteria with logical operators.</p>
 <p>For instance, to filter rows where <code class="docutils literal notranslate"><span class="pre">Pclass</span></code> is either 2 or 3 using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>:</p>
-<div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter rows where &#39;Pclass&#39; is either 2 or 3 using .loc[].</span>
-
-<span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])]</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Filter rows where &#39;Pclass&#39; is either 2 or 3 using .loc[].
+titanic.loc[titanic[&#39;Pclass&#39;].isin([2, 3])]
 </pre></div>
-</div>
-</div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
-      <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Braund, Mr. Owen Harris</td>
-      <td>male</td>
-      <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
-      <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>1</td>
-      <td>3</td>
-      <td>Heikkinen, Miss. Laina</td>
-      <td>female</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>STON/O2. 3101282</td>
-      <td>7.9250</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Allen, Mr. William Henry</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>6</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Moran, Mr. James</td>
-      <td>male</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>330877</td>
-      <td>8.4583</td>
-      <td>NaN</td>
-      <td>Q</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Palsson, Master. Gosta Leonard</td>
-      <td>male</td>
-      <td>2.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>349909</td>
-      <td>21.0750</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>884</th>
-      <td>885</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Sutehall, Mr. Henry Jr</td>
-      <td>male</td>
-      <td>25.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>SOTON/OQ 392076</td>
-      <td>7.0500</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>885</th>
-      <td>886</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Rice, Mrs. William (Margaret Norton)</td>
-      <td>female</td>
-      <td>39.0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>382652</td>
-      <td>29.1250</td>
-      <td>NaN</td>
-      <td>Q</td>
-    </tr>
-    <tr>
-      <th>886</th>
-      <td>887</td>
-      <td>0</td>
-      <td>2</td>
-      <td>Montvila, Rev. Juozas</td>
-      <td>male</td>
-      <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>211536</td>
-      <td>13.0000</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>888</th>
-      <td>889</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
-      <td>female</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2</td>
-      <td>W./C. 6607</td>
-      <td>23.4500</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>890</th>
-      <td>891</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Dooley, Mr. Patrick</td>
-      <td>male</td>
-      <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>370376</td>
-      <td>7.7500</td>
-      <td>NaN</td>
-      <td>Q</td>
-    </tr>
-  </tbody>
-</table>
-<p>675 rows × 12 columns</p>
-</div></div></div>
-</details>
 </div>
 <p>Similarly, if you want to perform position-based filtering using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>, you would first need to identify the positions of the relevant rows and columns. However, <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> is typically less useful for condition-based filtering because it requires knowledge of the exact row and column positions rather than labels.</p>
 <p>You can also combine multiple conditions using logical operators like <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (AND) and <code class="docutils literal notranslate"><span class="pre">|</span></code> (OR):</p>
-<div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter rows where (&#39;Pclass&#39; is either 2 or 3) AND (&#39;Age&#39; is greater than 35),</span>
-<span class="c1"># and then select the &#39;Name&#39; and &#39;Pclass&#39; columns.</span>
-
-<span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[((</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">35</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Pclass&#39;</span><span class="p">]]</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Filter rows where (&#39;Pclass&#39; is either 2 or 3) AND (&#39;Age&#39; is greater than 35),
+# and then select the &#39;Name&#39; and &#39;Pclass&#39; columns.
+titanic.loc[((titanic[&#39;Pclass&#39;] == 2) | (titanic[&#39;Pclass&#39;] == 3)) &amp; (titanic[&#39;Age&#39;] &gt; 35), [&#39;Name&#39;, &#39;Pclass&#39;]]
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Pclass</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>13</th>
-      <td>Andersson, Mr. Anders Johan</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>Hewlett, Mrs. (Mary D Kingcome)</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>Asplund, Mrs. Carl Oscar (Selma Augusta Emilia...</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>Wheadon, Mr. Edward H</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>Ahlin, Mrs. Johan (Johanna Persdotter Larsson)</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>854</th>
-      <td>Carter, Mrs. Ernest Courtenay (Lilian Hughes)</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>860</th>
-      <td>Hansen, Mr. Claus Peter</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>865</th>
-      <td>Bystrom, Mrs. (Karolina)</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>873</th>
-      <td>Vander Cruyssen, Mr. Victor</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>885</th>
-      <td>Rice, Mrs. William (Margaret Norton)</td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
-<p>113 rows × 2 columns</p>
-</div></div></div>
-</details>
-</div>
-</section>
 <section id="handling-missing-values-with-loc-and-iloc">
 <h3>Handling missing values with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code><a class="headerlink" href="#handling-missing-values-with-loc-and-iloc" title="Link to this heading">#</a></h3>
 <p>Both <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> allow you to filter rows based on the presence or absence of missing values.<br />
@@ -2069,9 +1781,13 @@ memory usage: 83.7+ KB
 </div>
 <p>Comparing the two number of rows (889 and 891) tells us, that two rows are missing embarkation data.</p>
 <p>As we saw in the exercise on the previous page on <a class="reference internal" href="02_pandas_tabular_data.html"><span class="doc std std-doc">reading and writing tabular data</span></a>, the two rows missing embarkation data can be found like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span><span class="p">[</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+</pre></div>
+</div>
+<p>If we want to solve the same thing using <code class="docutils literal notranslate"><span class="pre">loc</span></code>, we would write:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span><span class="p">[</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
 </pre></div>
 </div>
 </div>
@@ -2258,8 +1974,7 @@ memory usage: 83.7+ KB
 <h3>Combining <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code><a class="headerlink" href="#combining-loc-and-iloc" title="Link to this heading">#</a></h3>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> to select:</p>
 <ul class="simple">
-<li><p>Rows from index position 9 to 25 (exclusive).</p></li>
-<li><p>Columns from index position 2 to 6 (exclusive).</p></li>
+<li><p>The first 100 rows, i.e., rows from index position 0 to 100 (exclusive).</p></li>
 </ul>
 <p>Then further filter these rows using <code class="docutils literal notranslate"><span class="pre">loc</span></code> based on the condition where:</p>
 <ul class="simple">
@@ -2267,7 +1982,7 @@ memory usage: 83.7+ KB
 </ul>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">35</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">35</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2295,33 +2010,275 @@ memory usage: 83.7+ KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
       <th>Pclass</th>
       <th>Name</th>
       <th>Sex</th>
       <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>0</td>
+      <td>1</td>
+      <td>McCarthy, Mr. Timothy J</td>
+      <td>male</td>
+      <td>54.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>17463</td>
+      <td>51.8625</td>
+      <td>E46</td>
+      <td>S</td>
+    </tr>
+    <tr>
       <th>11</th>
+      <td>12</td>
+      <td>1</td>
       <td>1</td>
       <td>Bonnell, Miss. Elizabeth</td>
       <td>female</td>
       <td>58.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>113783</td>
+      <td>26.5500</td>
+      <td>C103</td>
+      <td>S</td>
     </tr>
     <tr>
       <th>13</th>
+      <td>14</td>
+      <td>0</td>
       <td>3</td>
       <td>Andersson, Mr. Anders Johan</td>
       <td>male</td>
       <td>39.0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>347082</td>
+      <td>31.2750</td>
+      <td>NaN</td>
+      <td>S</td>
     </tr>
     <tr>
       <th>15</th>
+      <td>16</td>
+      <td>1</td>
       <td>2</td>
       <td>Hewlett, Mrs. (Mary D Kingcome)</td>
       <td>female</td>
       <td>55.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>248706</td>
+      <td>16.0000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Asplund, Mrs. Carl Oscar (Selma Augusta Emilia...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>347077</td>
+      <td>31.3875</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Uruchurtu, Don. Manuel E</td>
+      <td>male</td>
+      <td>40.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>PC 17601</td>
+      <td>27.7208</td>
+      <td>NaN</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>34</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Wheadon, Mr. Edward H</td>
+      <td>male</td>
+      <td>66.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>C.A. 24579</td>
+      <td>10.5000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>36</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Holverson, Mr. Alexander Oskar</td>
+      <td>male</td>
+      <td>42.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113789</td>
+      <td>52.0000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Ahlin, Mrs. Johan (Johanna Persdotter Larsson)</td>
+      <td>female</td>
+      <td>40.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>7546</td>
+      <td>9.4750</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>53</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Harper, Mrs. Henry Sleeper (Myna Haxtun)</td>
+      <td>female</td>
+      <td>49.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17572</td>
+      <td>76.7292</td>
+      <td>D33</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>55</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Ostby, Mr. Engelhart Cornelius</td>
+      <td>male</td>
+      <td>65.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>113509</td>
+      <td>61.9792</td>
+      <td>B30</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>62</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Icard, Miss. Amelie</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>113572</td>
+      <td>80.0000</td>
+      <td>B28</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>63</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Harris, Mr. Henry Birkhardt</td>
+      <td>male</td>
+      <td>45.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>36973</td>
+      <td>83.4750</td>
+      <td>C83</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>93</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Chaffee, Mr. Herbert Fuller</td>
+      <td>male</td>
+      <td>46.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>W.E.P. 5734</td>
+      <td>61.1750</td>
+      <td>E31</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>95</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Coxon, Mr. Daniel</td>
+      <td>male</td>
+      <td>59.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>364500</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>97</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Goldschmidt, Mr. George B</td>
+      <td>male</td>
+      <td>71.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>PC 17754</td>
+      <td>34.6542</td>
+      <td>A5</td>
+      <td>C</td>
     </tr>
   </tbody>
 </table>
@@ -2418,7 +2375,9 @@ memory usage: 83.7+ KB
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-specific-rows-with-loc">Filtering specific rows with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-iloc-for-positional-indexing">Using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> for positional indexing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inclusive-vs-exclusive-slicing">Inclusive vs. Exclusive Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-loc-and-iloc-for-complex-conditions">Using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> for complex conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises"><i class="fa-solid fa-pencil"></i> Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values-with-loc-and-iloc">Handling missing values with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code></a></li>
 </ul>
 </li>

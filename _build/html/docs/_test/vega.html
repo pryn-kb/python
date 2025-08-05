@@ -209,6 +209,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../pandas/01_pandas_dataframe.html">Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pandas/02_pandas_tabular_data.html">Read and Write Tabular Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pandas/03_pandas_subsets.html">Subsets</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="../pandas/04_pandas_descriptive_statistics.html">Descriptive Statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pandas/05_pandas_plot.html">Basic Visualisations in Pandas</a></li>
 </ul>
@@ -556,24 +557,25 @@ Aliasing altair as <code class="docutils literal notranslate"><span class="pre">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-e5dee4245cf34b6088745d9aed7c2c58.vega-embed {
+  #altair-viz-5a65d46331eb4170803aead193abfd23.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-e5dee4245cf34b6088745d9aed7c2c58.vega-embed details,
-  #altair-viz-e5dee4245cf34b6088745d9aed7c2c58.vega-embed details summary {
+  #altair-viz-5a65d46331eb4170803aead193abfd23.vega-embed details,
+  #altair-viz-5a65d46331eb4170803aead193abfd23.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-e5dee4245cf34b6088745d9aed7c2c58"></div>
+<div id="altair-viz-5a65d46331eb4170803aead193abfd23"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e5dee4245cf34b6088745d9aed7c2c58") {
-      outputDiv = document.getElementById("altair-viz-e5dee4245cf34b6088745d9aed7c2c58");
+    if (outputDiv.id !== "altair-viz-5a65d46331eb4170803aead193abfd23") {
+      outputDiv = document.getElementById("altair-viz-5a65d46331eb4170803aead193abfd23");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -610,7 +612,8 @@ Aliasing altair as <code class="docutils literal notranslate"><span class="pre">
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -657,24 +660,25 @@ Aliasing altair as <code class="docutils literal notranslate"><span class="pre">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-6aaf0b5f5c4e4e878e408d95ab932182.vega-embed {
+  #altair-viz-2b19fdf92e544acab4077633c9f98f8d.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-6aaf0b5f5c4e4e878e408d95ab932182.vega-embed details,
-  #altair-viz-6aaf0b5f5c4e4e878e408d95ab932182.vega-embed details summary {
+  #altair-viz-2b19fdf92e544acab4077633c9f98f8d.vega-embed details,
+  #altair-viz-2b19fdf92e544acab4077633c9f98f8d.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-6aaf0b5f5c4e4e878e408d95ab932182"></div>
+<div id="altair-viz-2b19fdf92e544acab4077633c9f98f8d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6aaf0b5f5c4e4e878e408d95ab932182") {
-      outputDiv = document.getElementById("altair-viz-6aaf0b5f5c4e4e878e408d95ab932182");
+    if (outputDiv.id !== "altair-viz-2b19fdf92e544acab4077633c9f98f8d") {
+      outputDiv = document.getElementById("altair-viz-2b19fdf92e544acab4077633c9f98f8d");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -711,7 +715,8 @@ Aliasing altair as <code class="docutils literal notranslate"><span class="pre">
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -735,24 +740,25 @@ Aliasing altair as <code class="docutils literal notranslate"><span class="pre">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-4ba316c89fff4d0c8da958ea86daf388.vega-embed {
+  #altair-viz-ad57228493974a5a8b6167004dea66c4.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4ba316c89fff4d0c8da958ea86daf388.vega-embed details,
-  #altair-viz-4ba316c89fff4d0c8da958ea86daf388.vega-embed details summary {
+  #altair-viz-ad57228493974a5a8b6167004dea66c4.vega-embed details,
+  #altair-viz-ad57228493974a5a8b6167004dea66c4.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4ba316c89fff4d0c8da958ea86daf388"></div>
+<div id="altair-viz-ad57228493974a5a8b6167004dea66c4"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4ba316c89fff4d0c8da958ea86daf388") {
-      outputDiv = document.getElementById("altair-viz-4ba316c89fff4d0c8da958ea86daf388");
+    if (outputDiv.id !== "altair-viz-ad57228493974a5a8b6167004dea66c4") {
+      outputDiv = document.getElementById("altair-viz-ad57228493974a5a8b6167004dea66c4");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -789,7 +795,8 @@ Aliasing altair as <code class="docutils literal notranslate"><span class="pre">
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -813,24 +820,25 @@ Aliasing altair as <code class="docutils literal notranslate"><span class="pre">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-ab58670b30354de3a073b86a32670181.vega-embed {
+  #altair-viz-baba806558f14340be2e3a3048b5a8eb.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-ab58670b30354de3a073b86a32670181.vega-embed details,
-  #altair-viz-ab58670b30354de3a073b86a32670181.vega-embed details summary {
+  #altair-viz-baba806558f14340be2e3a3048b5a8eb.vega-embed details,
+  #altair-viz-baba806558f14340be2e3a3048b5a8eb.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-ab58670b30354de3a073b86a32670181"></div>
+<div id="altair-viz-baba806558f14340be2e3a3048b5a8eb"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ab58670b30354de3a073b86a32670181") {
-      outputDiv = document.getElementById("altair-viz-ab58670b30354de3a073b86a32670181");
+    if (outputDiv.id !== "altair-viz-baba806558f14340be2e3a3048b5a8eb") {
+      outputDiv = document.getElementById("altair-viz-baba806558f14340be2e3a3048b5a8eb");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -867,7 +875,8 @@ Aliasing altair as <code class="docutils literal notranslate"><span class="pre">
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -889,24 +898,25 @@ If we want to display it as ordinal data instead, we must add the ordinal encodi
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-03cf2db795124457ba3238775f57b2db.vega-embed {
+  #altair-viz-cfc7ebfde48044b39a4b018370b3d723.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-03cf2db795124457ba3238775f57b2db.vega-embed details,
-  #altair-viz-03cf2db795124457ba3238775f57b2db.vega-embed details summary {
+  #altair-viz-cfc7ebfde48044b39a4b018370b3d723.vega-embed details,
+  #altair-viz-cfc7ebfde48044b39a4b018370b3d723.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-03cf2db795124457ba3238775f57b2db"></div>
+<div id="altair-viz-cfc7ebfde48044b39a4b018370b3d723"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-03cf2db795124457ba3238775f57b2db") {
-      outputDiv = document.getElementById("altair-viz-03cf2db795124457ba3238775f57b2db");
+    if (outputDiv.id !== "altair-viz-cfc7ebfde48044b39a4b018370b3d723") {
+      outputDiv = document.getElementById("altair-viz-cfc7ebfde48044b39a4b018370b3d723");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -943,7 +953,8 @@ If we want to display it as ordinal data instead, we must add the ordinal encodi
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -967,24 +978,25 @@ If we want to display it as ordinal data instead, we must add the ordinal encodi
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-65af26fcf90a4f84be00f33508e67cca.vega-embed {
+  #altair-viz-9b400f75d04d417caf3736f21e18ad26.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-65af26fcf90a4f84be00f33508e67cca.vega-embed details,
-  #altair-viz-65af26fcf90a4f84be00f33508e67cca.vega-embed details summary {
+  #altair-viz-9b400f75d04d417caf3736f21e18ad26.vega-embed details,
+  #altair-viz-9b400f75d04d417caf3736f21e18ad26.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-65af26fcf90a4f84be00f33508e67cca"></div>
+<div id="altair-viz-9b400f75d04d417caf3736f21e18ad26"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-65af26fcf90a4f84be00f33508e67cca") {
-      outputDiv = document.getElementById("altair-viz-65af26fcf90a4f84be00f33508e67cca");
+    if (outputDiv.id !== "altair-viz-9b400f75d04d417caf3736f21e18ad26") {
+      outputDiv = document.getElementById("altair-viz-9b400f75d04d417caf3736f21e18ad26");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -1021,7 +1033,8 @@ If we want to display it as ordinal data instead, we must add the ordinal encodi
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -1052,24 +1065,25 @@ If we want to display it as ordinal data instead, we must add the ordinal encodi
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-f973e701af4e404080bb7dce741ea204.vega-embed {
+  #altair-viz-b4c553e6affd4496ab17350e79d68f46.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f973e701af4e404080bb7dce741ea204.vega-embed details,
-  #altair-viz-f973e701af4e404080bb7dce741ea204.vega-embed details summary {
+  #altair-viz-b4c553e6affd4496ab17350e79d68f46.vega-embed details,
+  #altair-viz-b4c553e6affd4496ab17350e79d68f46.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f973e701af4e404080bb7dce741ea204"></div>
+<div id="altair-viz-b4c553e6affd4496ab17350e79d68f46"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f973e701af4e404080bb7dce741ea204") {
-      outputDiv = document.getElementById("altair-viz-f973e701af4e404080bb7dce741ea204");
+    if (outputDiv.id !== "altair-viz-b4c553e6affd4496ab17350e79d68f46") {
+      outputDiv = document.getElementById("altair-viz-b4c553e6affd4496ab17350e79d68f46");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -1106,7 +1120,8 @@ If we want to display it as ordinal data instead, we must add the ordinal encodi
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -1135,24 +1150,25 @@ If we want to display it as ordinal data instead, we must add the ordinal encodi
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-8430e587e46248e3b8d42cc9a962f6c2.vega-embed {
+  #altair-viz-ebc1165a55ad4c588c22a2fabf9286af.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8430e587e46248e3b8d42cc9a962f6c2.vega-embed details,
-  #altair-viz-8430e587e46248e3b8d42cc9a962f6c2.vega-embed details summary {
+  #altair-viz-ebc1165a55ad4c588c22a2fabf9286af.vega-embed details,
+  #altair-viz-ebc1165a55ad4c588c22a2fabf9286af.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8430e587e46248e3b8d42cc9a962f6c2"></div>
+<div id="altair-viz-ebc1165a55ad4c588c22a2fabf9286af"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8430e587e46248e3b8d42cc9a962f6c2") {
-      outputDiv = document.getElementById("altair-viz-8430e587e46248e3b8d42cc9a962f6c2");
+    if (outputDiv.id !== "altair-viz-ebc1165a55ad4c588c22a2fabf9286af") {
+      outputDiv = document.getElementById("altair-viz-ebc1165a55ad4c588c22a2fabf9286af");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -1189,7 +1205,8 @@ If we want to display it as ordinal data instead, we must add the ordinal encodi
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -1267,24 +1284,25 @@ We will continue with the titanic dataset.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-98e7194e2da34d3ba7e9f53f3976d150.vega-embed {
+  #altair-viz-b9ec1c5ec7ba4c40ade2ef4d64109519.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-98e7194e2da34d3ba7e9f53f3976d150.vega-embed details,
-  #altair-viz-98e7194e2da34d3ba7e9f53f3976d150.vega-embed details summary {
+  #altair-viz-b9ec1c5ec7ba4c40ade2ef4d64109519.vega-embed details,
+  #altair-viz-b9ec1c5ec7ba4c40ade2ef4d64109519.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-98e7194e2da34d3ba7e9f53f3976d150"></div>
+<div id="altair-viz-b9ec1c5ec7ba4c40ade2ef4d64109519"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-98e7194e2da34d3ba7e9f53f3976d150") {
-      outputDiv = document.getElementById("altair-viz-98e7194e2da34d3ba7e9f53f3976d150");
+    if (outputDiv.id !== "altair-viz-b9ec1c5ec7ba4c40ade2ef4d64109519") {
+      outputDiv = document.getElementById("altair-viz-b9ec1c5ec7ba4c40ade2ef4d64109519");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -1321,7 +1339,8 @@ We will continue with the titanic dataset.</p>
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -1356,24 +1375,25 @@ We will continue with the titanic dataset.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-f2d7f78386394c48b0e41a3084c4dffb.vega-embed {
+  #altair-viz-459c1fa738904cd38851c32c791fbde6.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f2d7f78386394c48b0e41a3084c4dffb.vega-embed details,
-  #altair-viz-f2d7f78386394c48b0e41a3084c4dffb.vega-embed details summary {
+  #altair-viz-459c1fa738904cd38851c32c791fbde6.vega-embed details,
+  #altair-viz-459c1fa738904cd38851c32c791fbde6.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f2d7f78386394c48b0e41a3084c4dffb"></div>
+<div id="altair-viz-459c1fa738904cd38851c32c791fbde6"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f2d7f78386394c48b0e41a3084c4dffb") {
-      outputDiv = document.getElementById("altair-viz-f2d7f78386394c48b0e41a3084c4dffb");
+    if (outputDiv.id !== "altair-viz-459c1fa738904cd38851c32c791fbde6") {
+      outputDiv = document.getElementById("altair-viz-459c1fa738904cd38851c32c791fbde6");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -1410,7 +1430,8 @@ We will continue with the titanic dataset.</p>
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -1437,24 +1458,25 @@ We will continue with the titanic dataset.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-2b23c2a40f684c78ad4cf7a7b5e765f3.vega-embed {
+  #altair-viz-9dd8d893b5e74de49510ad05cf4985d5.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-2b23c2a40f684c78ad4cf7a7b5e765f3.vega-embed details,
-  #altair-viz-2b23c2a40f684c78ad4cf7a7b5e765f3.vega-embed details summary {
+  #altair-viz-9dd8d893b5e74de49510ad05cf4985d5.vega-embed details,
+  #altair-viz-9dd8d893b5e74de49510ad05cf4985d5.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-2b23c2a40f684c78ad4cf7a7b5e765f3"></div>
+<div id="altair-viz-9dd8d893b5e74de49510ad05cf4985d5"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2b23c2a40f684c78ad4cf7a7b5e765f3") {
-      outputDiv = document.getElementById("altair-viz-2b23c2a40f684c78ad4cf7a7b5e765f3");
+    if (outputDiv.id !== "altair-viz-9dd8d893b5e74de49510ad05cf4985d5") {
+      outputDiv = document.getElementById("altair-viz-9dd8d893b5e74de49510ad05cf4985d5");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -1491,7 +1513,8 @@ We will continue with the titanic dataset.</p>
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -1566,24 +1589,25 @@ We will continue with the titanic dataset.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-47d14bd244994a54b0a17b6dfe8aa8d4.vega-embed {
+  #altair-viz-57e332a304214986b473cf53b6f5b717.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-47d14bd244994a54b0a17b6dfe8aa8d4.vega-embed details,
-  #altair-viz-47d14bd244994a54b0a17b6dfe8aa8d4.vega-embed details summary {
+  #altair-viz-57e332a304214986b473cf53b6f5b717.vega-embed details,
+  #altair-viz-57e332a304214986b473cf53b6f5b717.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-47d14bd244994a54b0a17b6dfe8aa8d4"></div>
+<div id="altair-viz-57e332a304214986b473cf53b6f5b717"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-47d14bd244994a54b0a17b6dfe8aa8d4") {
-      outputDiv = document.getElementById("altair-viz-47d14bd244994a54b0a17b6dfe8aa8d4");
+    if (outputDiv.id !== "altair-viz-57e332a304214986b473cf53b6f5b717") {
+      outputDiv = document.getElementById("altair-viz-57e332a304214986b473cf53b6f5b717");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -1620,7 +1644,8 @@ We will continue with the titanic dataset.</p>
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -1648,24 +1673,25 @@ We will continue with the titanic dataset.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-34d2118e4aee4262b21c0d90bced0279.vega-embed {
+  #altair-viz-d305969d16c44d8db876efda49d444f8.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-34d2118e4aee4262b21c0d90bced0279.vega-embed details,
-  #altair-viz-34d2118e4aee4262b21c0d90bced0279.vega-embed details summary {
+  #altair-viz-d305969d16c44d8db876efda49d444f8.vega-embed details,
+  #altair-viz-d305969d16c44d8db876efda49d444f8.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-34d2118e4aee4262b21c0d90bced0279"></div>
+<div id="altair-viz-d305969d16c44d8db876efda49d444f8"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-34d2118e4aee4262b21c0d90bced0279") {
-      outputDiv = document.getElementById("altair-viz-34d2118e4aee4262b21c0d90bced0279");
+    if (outputDiv.id !== "altair-viz-d305969d16c44d8db876efda49d444f8") {
+      outputDiv = document.getElementById("altair-viz-d305969d16c44d8db876efda49d444f8");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -1702,7 +1728,8 @@ We will continue with the titanic dataset.</p>
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
