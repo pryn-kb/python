@@ -912,12 +912,17 @@ Name: Fare, dtype: object
 </div>
 </details>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fare</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fare
 &lt;class &#39;str&#39;&gt;    3
@@ -925,6 +930,7 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -949,12 +955,17 @@ Name: count, dtype: int64
 <p>Although our data looks fine at first glance, each cell is actually stored as a string.
 While we can read the numbers without issue, this will cause problems if we want to use them for calculations.</p>
 <p>To solve this, Pandas provides a built-in function called <code class="docutils literal notranslate"><span class="pre">to_numeric()</span></code>, which converts a <code class="docutils literal notranslate"><span class="pre">Series</span></code> to either an integer or a float, depending on the values.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fare</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">fare</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
@@ -988,6 +999,7 @@ While we can read the numbers without issue, this will cause problems if we want
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>However, as seen above, this produces a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> due to the “Unknown” value at position 2.</p>
 <p>To solve this, we need to use the <code class="docutils literal notranslate"><span class="pre">errors</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">to_numeric()</span></code>.</p>
@@ -1028,10 +1040,12 @@ Here, the name of the ‘fare’ <code class="docutils literal notranslate"><spa
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">axis</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">pandas.concat()</span></code> determines whether you are combining data along rows or columns:</p>
-<p><code class="docutils literal notranslate"><span class="pre">axis=0</span></code> (Default): Concatenation along Rows<br />
-<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>: Concatenation along Columns</p>
-<p>(When concatenating along <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>, Pandas aligns on the index by default. If indices do not match, you may see <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values where data is missing.)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">axis</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">pandas.concat()</span></code> controls whether you combine data <strong>row-wise</strong> or <strong>column-wise</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">axis=0</span></code> <strong>(default)</strong>: Concatenates along rows (adds more rows beneath each other).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">axis=1</span></code>: Concatenates along columns (adds new columns side by side).</p></li>
+</ul>
+<p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Important:</strong> When concatenating with <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>, Pandas aligns data on the <strong>index</strong>. If the indices do not match, the result will contain <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values wherever data is missing. This can easily lead to unexpected gaps if you haven’t ensured consistent indexing before concatenation.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the updated DataFrame &#39;df&#39;.</span>
@@ -1101,16 +1115,23 @@ Here, the name of the ‘fare’ <code class="docutils literal notranslate"><spa
 <section id="id1">
 <h2><i class="fa-solid fa-pencil"></i> Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Given the <code class="docutils literal notranslate"><span class="pre">Series</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extra_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;Futrelle&#39;</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;Female&#39;</span><span class="p">,</span> <span class="mf">53.1000</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extra_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Futrelle&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">:</span> <span class="s1">&#39;female&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">:</span> <span class="mf">53.1000</span><span class="p">}</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>Append this <code class="docutils literal notranslate"><span class="pre">Series</span></code> to ‘df’ but as a row (not a column!).</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df = pd.concat([df, extra_row], axis=0)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df = pd.concat([df, extra_row.to_frame().T], ignore_index=True)
 </pre></div>
 </div>
-<p>This solution concatenates the ‘extra_row’ <code class="docutils literal notranslate"><span class="pre">Series</span></code> to the ‘df’ <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> along the rows (axis=0).</p>
+<p>This solution concatenates the <code class="docutils literal notranslate"><span class="pre">extra_row</span></code> <code class="docutils literal notranslate"><span class="pre">Series</span></code> to the <code class="docutils literal notranslate"><span class="pre">df</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> along the rows (<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>).</p>
+<p>The argument <code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code> is important because it forces Pandas to create a new continuous index (<code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">…</span></code>) instead of keeping the original index values from the two objects being concatenated.</p>
+<ul class="simple">
+<li><p>Without <code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code>, the new row would keep its original index <code class="docutils literal notranslate"><span class="pre">0</span></code> (from the <code class="docutils literal notranslate"><span class="pre">Series</span></code> converted to a one-row <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>), resulting in duplicate indices in <code class="docutils literal notranslate"><span class="pre">df</span></code>. This can lead to confusion or unexpected behavior when selecting rows by index.</p></li>
+</ul>
+<p>If the column names in <code class="docutils literal notranslate"><span class="pre">extra_row</span></code> did <strong>not</strong> match the columns in <code class="docutils literal notranslate"><span class="pre">df</span></code>, Pandas would still perform the concatenation, but it would align only on the matching labels. Any non-matching columns would be added as new columns, and cells where data is missing would be filled with <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
 </div>
 <section id="creating-a-new-column-based-on-existing-data">
 <h3>Creating a new column based on existing data<a class="headerlink" href="#creating-a-new-column-based-on-existing-data" title="Link to this heading">#</a></h3>
