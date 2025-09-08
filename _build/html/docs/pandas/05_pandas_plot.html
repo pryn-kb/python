@@ -209,7 +209,6 @@
 <li class="toctree-l2"><a class="reference internal" href="01_pandas_dataframe.html">Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_pandas_tabular_data.html">Read and Write Tabular Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_pandas_subsets.html">Subsets</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="04_pandas_descriptive_statistics.html">Descriptive Statistics</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Basic Visualisations in Pandas</a></li>
 </ul>
@@ -489,7 +488,7 @@ If you want to dive further into the world of plotting, you can read more about 
 <hr class="docutils" />
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This line imports the pandas library and aliases it as &#39;pd&#39;.</span>
 
@@ -498,7 +497,7 @@ If you want to dive further into the world of plotting, you can read more about 
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the Titanic dataset from a CSV file into a DataFrame named &#39;titanic&#39;.</span>
 
@@ -511,60 +510,78 @@ If you want to dive further into the world of plotting, you can read more about 
 <h3>Pie chart<a class="headerlink" href="#pie-chart" title="Link to this heading">#</a></h3>
 <p>This pie chart visualises the distribution of passengers by sex (<code class="docutils literal notranslate"><span class="pre">Sex</span></code>).<br />
 It shows the proportion of male and female passengers in the dataset.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic pie chart of passenger distribution by sex</span>
 
 <span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Passenger Distribution by Sex&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Passenger Distribution by Sex&#39;}, ylabel=&#39;count&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/ee35dfd2b71c1e939e9024701dc4edaf974d61e29460c7fba4156bf9674e8121.png" src="../../_images/ee35dfd2b71c1e939e9024701dc4edaf974d61e29460c7fba4156bf9674e8121.png" />
 </div>
+</details>
 </div>
 </section>
 <section id="scatter-plot">
 <h3>Scatter plot<a class="headerlink" href="#scatter-plot" title="Link to this heading">#</a></h3>
 <p>This scatter plot illustrates the relationship between passengers’ age and fare.<br />
 Each dot represents a passenger, with their age on the x-axis and the fare they paid on the y-axis.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scatter plot (requires x and y columns)</span>
 
 <span class="n">titanic</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Age vs Fare&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Age vs Fare&#39;}, xlabel=&#39;Age&#39;, ylabel=&#39;Fare&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/052f0d9ee8dd6c670abbdecf552d7c8e91864078ff99c0b7ef717f46a33ac909.png" src="../../_images/052f0d9ee8dd6c670abbdecf552d7c8e91864078ff99c0b7ef717f46a33ac909.png" />
 </div>
+</details>
 </div>
 </section>
 <section id="bar-plot">
 <h3>Bar plot<a class="headerlink" href="#bar-plot" title="Link to this heading">#</a></h3>
 <p>This bar plot shows the distribution of passengers across the different classes (<code class="docutils literal notranslate"><span class="pre">Pclass</span></code>), sorted by class.<br />
 The height of each bar indicates the number of passengers in each class.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bar plot sorted by class</span>
 
 <span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Passenger Class Distribution (Sorted)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Passenger Class Distribution (Sorted)&#39;}, xlabel=&#39;Pclass&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/d6d700b2d3380550dfd282c81aa1fa565176f838d9d82f35c440d027c4f7c8d1.png" src="../../_images/d6d700b2d3380550dfd282c81aa1fa565176f838d9d82f35c440d027c4f7c8d1.png" />
 </div>
+</details>
 </div>
 </section>
 </section>
