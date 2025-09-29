@@ -206,6 +206,7 @@
 <li class="toctree-l2"><a class="reference internal" href="99_functions.html">Writing Functions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">List Comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="99_reading_writing.html">Reading from and Writing to Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="99_try_except.html">Error Handling</a></li>
 </ul>
 </details></li>
 </ul>
@@ -743,7 +744,6 @@ If you put other actions inside (like <code class="docutils literal notranslate"
 <hr class="docutils" />
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
 <section id="exercise-1-odd-numbers">
 <h3><i class="fa-solid fa-pencil"></i> Exercise 1: Odd numbers<a class="headerlink" href="#exercise-1-odd-numbers" title="Link to this heading">#</a></h3>
 <p>Create a list of the first 20 odd numbers using a list comprehension.</p>
@@ -758,6 +758,7 @@ If you put other actions inside (like <code class="docutils literal notranslate"
 <p>We iterate over indices <code class="docutils literal notranslate"><span class="pre">0..19</span></code> and map each <code class="docutils literal notranslate"><span class="pre">n</span></code> to the odd number <code class="docutils literal notranslate"><span class="pre">2*n</span> <span class="pre">+</span> <span class="pre">1</span></code>. This yields exactly 20 values, starting at 1 and ending at 39.</p>
 </div>
 </section>
+<hr class="docutils" />
 <section id="exercise-2-normalise-names">
 <h3><i class="fa-solid fa-pencil"></i> Exercise 2: Normalise names<a class="headerlink" href="#exercise-2-normalise-names" title="Link to this heading">#</a></h3>
 <p>Given <code class="docutils literal notranslate"><span class="pre">names</span> <span class="pre">=</span> <span class="pre">[&quot;alice&quot;,</span> <span class="pre">&quot;Bob&quot;,</span> <span class="pre">&quot;CHARLIE&quot;]</span></code>, use list comprehension to build a new list where all names are lowercase.</p>
@@ -772,6 +773,7 @@ If you put other actions inside (like <code class="docutils literal notranslate"
 <p>Apply the transformation <code class="docutils literal notranslate"><span class="pre">name.lower()</span></code> to each element and collect the results.</p>
 </div>
 </section>
+<hr class="docutils" />
 <section id="exercise-3-filter-positives">
 <h3><i class="fa-solid fa-pencil"></i> Exercise 3: Filter positives<a class="headerlink" href="#exercise-3-filter-positives" title="Link to this heading">#</a></h3>
 <p>From <code class="docutils literal notranslate"><span class="pre">numbers</span> <span class="pre">=</span> <span class="pre">[3,</span> <span class="pre">-1,</span> <span class="pre">4,</span> <span class="pre">-2,</span> <span class="pre">5,</span> <span class="pre">-6]</span></code>, use list comprehension to make a list containing only the positive values.</p>
@@ -786,6 +788,7 @@ If you put other actions inside (like <code class="docutils literal notranslate"
 <p>The <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> clause filters out non-positive numbers; the comprehension collects only values that satisfy the condition.</p>
 </div>
 </section>
+<hr class="docutils" />
 <section id="exercise-4-filter-and-transform">
 <h3><i class="fa-solid fa-pencil"></i> Exercise 4: Filter and transform<a class="headerlink" href="#exercise-4-filter-and-transform" title="Link to this heading">#</a></h3>
 <p>Use list comprehension to produce the squares of all numbers from 0–30 that are divisible by 3.</p>
@@ -799,6 +802,7 @@ If you put other actions inside (like <code class="docutils literal notranslate"
 <p>We loop <code class="docutils literal notranslate"><span class="pre">x</span></code> over <code class="docutils literal notranslate"><span class="pre">0..30</span></code>, keep only <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">3</span> <span class="pre">==</span> <span class="pre">0</span></code>, then apply the expression <code class="docutils literal notranslate"><span class="pre">x**2</span></code> to each kept value.</p>
 </div>
 </section>
+<hr class="docutils" />
 <section id="exercise-5-two-letter-combinations">
 <h3><i class="fa-solid fa-pencil"></i> Exercise 5: Two-letter combinations<a class="headerlink" href="#exercise-5-two-letter-combinations" title="Link to this heading">#</a></h3>
 <p>Use list comprehension to create all two-letter combinations from <code class="docutils literal notranslate"><span class="pre">&quot;AB&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;CD&quot;</span></code> to get <code class="docutils literal notranslate"><span class="pre">[&quot;AC&quot;,</span> <span class="pre">&quot;AD&quot;,</span> <span class="pre">&quot;BC&quot;,</span> <span class="pre">&quot;BD&quot;]</span></code>.</p>
@@ -819,6 +823,7 @@ In other words, this comprehension has two loops:</p>
 <p>So the program first makes <code class="docutils literal notranslate"><span class="pre">&quot;AC&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;AD&quot;</span></code> (with <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">&quot;A&quot;</span></code>), and then <code class="docutils literal notranslate"><span class="pre">&quot;BC&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;BD&quot;</span></code> (with <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">&quot;B&quot;</span></code>).</p>
 </div>
 </section>
+<hr class="docutils" />
 <section id="exercise-6-word-lengths">
 <h3><i class="fa-solid fa-pencil"></i> Exercise 6: Word lengths<a class="headerlink" href="#exercise-6-word-lengths" title="Link to this heading">#</a></h3>
 <p>From the sentence <code class="docutils literal notranslate"><span class="pre">&quot;List</span> <span class="pre">comprehensions</span> <span class="pre">are</span> <span class="pre">powerful&quot;</span></code>, use list comprehension to make a list of word lengths.</p>
@@ -837,6 +842,7 @@ In other words, this comprehension has two loops:</p>
 <p><code class="docutils literal notranslate"><span class="pre">split()</span></code> tokenizes the sentence by whitespace; we then apply <code class="docutils literal notranslate"><span class="pre">len(...)</span></code> to each word and collect the lengths.</p>
 </div>
 </section>
+<hr class="docutils" />
 <section id="exercise-7-loop-to-comprehension">
 <h3><i class="fa-solid fa-pencil"></i> Exercise 7: Loop to comprehension<a class="headerlink" href="#exercise-7-loop-to-comprehension" title="Link to this heading">#</a></h3>
 <p>Rewrite this loop as a list comprehension:</p>
