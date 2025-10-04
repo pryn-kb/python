@@ -999,9 +999,11 @@ To convert the return value to an integer, you can use the <code class="docutils
 </ul>
 <div class="hint admonition">
 <p class="admonition-title">Input &amp; random generator</p>
-<p>You will need to use the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function introduced in the exercise above.
-We expect the users to only type in integers.
-You can use the <code class="docutils literal notranslate"><span class="pre">random</span></code> module to generate the secret number. Here’s an example of how to import and use it:</p>
+<ul class="simple">
+<li><p>You will need to use the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function introduced in the exercise above.</p></li>
+<li><p>We expect the users to only type in integers.</p></li>
+<li><p>You can use the <code class="docutils literal notranslate"><span class="pre">random</span></code> module to generate the secret number. Here’s an example of how to import and use it:</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="c1"># Generate a random secret number between 1 and 20</span>
 <span class="n">secret_number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -1055,6 +1057,8 @@ Congratulations! You guessed the correct number in 3 attempts.
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Too high. Try again.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Note:</strong> At this stage, the game will crash if the user types something that is not an integer.<br />
+If you want to learn how to handle such cases gracefully, take a look at the chapter on <a class="reference internal" href="99_try_except.html"><span class="doc std std-doc">Error Handling</span></a>.</p>
 </div>
 </section>
 </section>
