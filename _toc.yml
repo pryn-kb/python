@@ -41,7 +41,7 @@ parts:
       - file: docs/101/99_sets_and_dictionaries
       - file: docs/101/99_functions
 
-  - caption: Python and Pandas
+  - caption: Python and pandas 🐼
     chapters:
     - file: docs/pandas/getting_started
       sections:
