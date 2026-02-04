@@ -17,8 +17,7 @@ parts:
     - file: docs/howto/dictionaries
       sections:
       - file: docs/howto/dictionary_101
-      - file: docs/howto/dictionary_pandas
-    - file: docs/howto/help_and_documentation    
+      - file: docs/howto/dictionary_pandas 
 
   - caption: Python for Absolute Beginners
     chapters:
@@ -53,9 +52,10 @@ parts:
       - file: docs/pandas/04_pandas_descriptive_statistics
       - file: docs/pandas/05_pandas_plot
 
-  - caption: Tutorials
+  - caption: Get Help and Learn More
     chapters:
-    - file: docs/tutorials/tutorials
+    - file: docs/resources/resources_documentation
+    - file: docs/resources/tutorials
 #      sections:
 #      - file: docs/tutorials/matplotlib
 #      - file: docs/tutorials/numpy
