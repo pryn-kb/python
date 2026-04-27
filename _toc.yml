@@ -39,9 +39,9 @@ parts:
       - file: docs/101/99_functions
     - file: docs/101/bonus
       sections:
-      - file: docs/101/99_reading_writing
       - file: docs/101/99_libraries
       - file: docs/101/99_list_comprehensions
+      - file: docs/101/99_reading_writing
 
   - caption: Python and pandas 🐼
     chapters:
