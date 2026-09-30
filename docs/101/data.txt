@@ -1,3 +1,0 @@
-This is a small text file.
-It has a few lines of content.
-Each line ends with a newline character.
